@@ -34,6 +34,9 @@ const data = new FormData(event.currentTarget);
 console.log({
     email: data.get('email'),
     password: data.get('password'),
+    first: data.get('firstName'),
+    last: data.get('lastName'),
+    trainer: data.get('trainerName')
 });
 };
 
