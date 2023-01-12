@@ -12,6 +12,8 @@ import CatchingPokemonIcon from '@mui/icons-material/CatchingPokemon';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import TrainerProfile from '../dbFiles/trainerProfile';
+import dbOperation from '../dbFiles/dbOperation';
 
 function Copyright(props) {
   return (
@@ -29,15 +31,19 @@ const theme = createTheme();
 
 
 const handleSubmit = (event) => {
-event.preventDefault();
-const data = new FormData(event.currentTarget);
-console.log({
-    email: data.get('email'),
-    password: data.get('password'),
-    first: data.get('firstName'),
-    last: data.get('lastName'),
-    trainer: data.get('trainerName')
-});
+    event.preventDefault();
+    const data = new FormData(event.currentTarget);
+
+    let newTrainer = new TrainerProfile(data.get('trainerName'), data.get('email'), data.get('firstName'), data.get('lastName'), data.get('password'));
+    dbOperation.createTrainerProfile(newTrainer);
+    
+    console.log({
+        trainer: data.get('trainerName'),
+        email: data.get('email'),
+        password: data.get('password'),
+        first: data.get('firstName'),
+        last: data.get('lastName')
+    });
 };
 
 export default class SignUpPage extends React.Component {
