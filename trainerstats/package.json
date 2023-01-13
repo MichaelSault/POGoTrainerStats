@@ -2,7 +2,13 @@
   "name": "trainerstats",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:5000",
+  "options": {
+    "allowedHosts": [
+      "localhost",
+      ".localhost"
+    ],
+    "proxy": "http://localhost:5000"
+  },
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
@@ -19,16 +25,18 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.6.1",
-    "react-scripts": "5.0.1",
+    "react-scripts": "^5.0.1",
     "sequelize": "^6.28.0",
+    "stream-browserify": "^3.0.0",
     "styled-components": "^5.3.6",
     "tedious": "^15.1.2",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "web3": "^1.6.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -50,6 +58,8 @@
     ]
   },
   "devDependencies": {
-    "nodemon": "^2.0.20"
+    "node-polyfill-webpack-plugin": "^2.0.1",
+    "nodemon": "^2.0.20",
+    "react-app-rewired": "^2.2.1"
   }
 }

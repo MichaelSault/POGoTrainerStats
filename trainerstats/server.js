@@ -21,7 +21,7 @@ const express = require('express'),
 /* }) */
 /*  */
 
-let Ash = new TrainerProfile('Ash1234', 'Ash123@pokemail.com', 'Ash', 'Ketchem', 'pikachuiscool');
+let Ash = new TrainerProfile('Brock', 'Ash123@pokemail.com', 'Ash', 'Ketchem', 'pikachuiscool');
 
 dbOperation.createTrainerProfile(Ash);
 
