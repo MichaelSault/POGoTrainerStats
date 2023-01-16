@@ -1,47 +1,106 @@
 import './App.css';
-import * as React from 'react';
-import { BrowserRouter, Routes, Route  } from "react-router-dom";
-import {useState} from 'react';
+import React, {useState} from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-//import Button from '@mui/material/Button';
-
-import '@fontsource/roboto/300.css';
-import '@fontsource/roboto/400.css';
-import '@fontsource/roboto/500.css';
-import '@fontsource/roboto/700.css';
-
-import LoginPage from './component/login.component';
-import SignUpPage from './component/signup.component';
+import SignInSide from './component/SignInSide';
+import SignUp from './component/SignUp';
 
 function App() {
-  const [returnedData, setReturnedData] = useState(['hello fellow hu-mans [:D]']);
 
-  const getData = async (url) => {
-    const newData = await fetch(url, {
-      method: 'GET',
+  const [returnedData, setReturnedData] = useState({EmployeeID: 0, Firstname: '', Lastname: '', Age: 0, Gender: ''});
+  const [employee, setEmployee] = useState({EmployeeID: 0, Firstname: '', Lastname: '', Age: 0, Gender: ''}) //use state is a hook for functional components
+
+  const setInput = (e) => {
+    const {name, value} = e.target;
+    console.log(value);
+    if (name === 'EmployeeID' || name === 'Age'){
+      setEmployee(prevState => ({
+        ...prevState,
+        [name]: parseInt(value)
+      }));
+      return;
+    }
+    setEmployee(prevState => ({
+      ...prevState,
+      [name]: value
+    }));
+  }
+
+  const fetchData = async () => {
+    console.log(employee);
+    const newData = await fetch('http://localhost:5000/api', {
+      method: 'POST',
       headers: {
-        'content-type': 'application/json',
+        'Content-Type': 'application/json',
         'Accept': 'application/json'
-      }
+      },
+      body: JSON.stringify({
+        name: employee.Firstname
+      })
     })
     .then(res => res.json());
     console.log(newData);
-    setReturnedData(newData.result)
+    setReturnedData(newData[0])
+  }
+
+  const createEmployee = async () => {
+    const newData = await fetch('http://localhost:5000/hello', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify({
+        ...employee
+      })
+    })
+    .then(res => res.json());
+    console.log(newData);
+    setReturnedData(newData[0])
   }
 
   return (
-    <div>
-        {returnedData}
-          <button onClick={() => getData('/quit')}>Hello Mr.Button</button>
-        {returnedData}
-        <BrowserRouter>
-          <Routes>
-            <Route path='/' element={<LoginPage />}/>
-            <Route path='/Login' element={<LoginPage />}/>
-            <Route path='/SignUp' element={<SignUpPage />}/>
-          </Routes>
-        </BrowserRouter>
-      </div>
+    <>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<SignInSide />}/>
+        <Route path='/Login' element={<SignInSide />}/>
+        <Route path='/SignUp' element={<SignUp />}/>
+      </Routes>
+    </BrowserRouter>
+    
+    <div className="App">
+      <input
+        type="number" 
+        name='EmployeeID' 
+        placeholder='EmployeeID' 
+        onChange={setInput}></input>
+      <input 
+        name='Firstname' 
+        placeholder='Firstname' 
+        onChange={setInput}></input>
+      <input 
+        name='Lastname' 
+        placeholder='Lastname' 
+        onChange={setInput}></input>
+      <input 
+        type="number" 
+        name='Age'
+        placeholder='Age' 
+        onChange={setInput}></input>
+      <input 
+        name='Gender' 
+        placeholder='Gender' 
+        onChange={setInput}></input>
+      <button onClick={() => fetchData()}>View</button>
+      <button onClick={() => createEmployee()}>Create</button>
+      <p>EmployeeID: {returnedData.EmployeeID}</p>
+      <p>Firstname: {returnedData.Firstname}</p>
+      <p>Lastname: {returnedData.Lastname}</p>
+      <p>Age: {returnedData.Age}</p>
+      <p>Gender: {returnedData.Gender}</p>
+    </div>
+    </>
   );
 }
 

@@ -1,5 +1,5 @@
 {
-  "name": "trainerstats",
+  "name": "full-stack",
   "version": "0.1.0",
   "private": true,
   "options": {
@@ -7,36 +7,32 @@
       "localhost",
       ".localhost"
     ],
-    "proxy": "http://localhost:5000"
+    "proxy": "localhost:5000"
   },
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
-    "@fontsource/roboto": "^4.5.8",
     "@mui/icons-material": "^5.11.0",
-    "@mui/material": "^5.11.3",
-    "@mui/styled-engine-sc": "^5.11.0",
+    "@mui/material": "^5.11.4",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "cors": "^2.8.5",
     "express": "^4.18.2",
     "mssql": "^9.0.1",
+    "npm-run-all": "^4.1.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.6.1",
-    "react-scripts": "^5.0.1",
-    "sequelize": "^6.28.0",
-    "stream-browserify": "^3.0.0",
-    "styled-components": "^5.3.6",
-    "tedious": "^15.1.2",
-    "web-vitals": "^2.1.4",
-    "web3": "^1.6.1"
+    "react-router-dom": "^6.6.2",
+    "react-scripts": "5.0.1",
+    "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-app-rewired start",
-    "build": "react-app-rewired build",
-    "test": "react-app-rewired test",
+    "start": "react-scripts start",
+    "dev": "run-p server start",
+    "server": "nodemon server.js",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -58,8 +54,6 @@
     ]
   },
   "devDependencies": {
-    "node-polyfill-webpack-plugin": "^2.0.1",
-    "nodemon": "^2.0.20",
-    "react-app-rewired": "^2.2.1"
+    "nodemon": "^2.0.20"
   }
 }
