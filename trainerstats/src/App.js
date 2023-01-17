@@ -68,38 +68,6 @@ function App() {
         <Route path='/SignUp' element={<SignUp />}/>
       </Routes>
     </BrowserRouter>
-    
-    <div className="App">
-      <input
-        type="number" 
-        name='EmployeeID' 
-        placeholder='EmployeeID' 
-        onChange={setInput}></input>
-      <input 
-        name='Firstname' 
-        placeholder='Firstname' 
-        onChange={setInput}></input>
-      <input 
-        name='Lastname' 
-        placeholder='Lastname' 
-        onChange={setInput}></input>
-      <input 
-        type="number" 
-        name='Age'
-        placeholder='Age' 
-        onChange={setInput}></input>
-      <input 
-        name='Gender' 
-        placeholder='Gender' 
-        onChange={setInput}></input>
-      <button onClick={() => fetchData()}>View</button>
-      <button onClick={() => createEmployee()}>Create</button>
-      <p>EmployeeID: {returnedData.EmployeeID}</p>
-      <p>Firstname: {returnedData.Firstname}</p>
-      <p>Lastname: {returnedData.Lastname}</p>
-      <p>Age: {returnedData.Age}</p>
-      <p>Gender: {returnedData.Gender}</p>
-    </div>
     </>
   );
 }

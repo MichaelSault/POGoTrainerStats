@@ -13,10 +13,10 @@ app.use(express.urlencoded({extended: true}));
 app.use(cors()); 
 
 app.post('/api', async(req, res) => { 
-    console.log('called api');
-    const result = await dbOperation.getTrainerProfile(req.body.name);
+    console.log(req.body);
+    const result = await dbOperation.getTrainerProfile(req.body);
     console.log(result.recordset[0]);
-    res.send(result.recordset); //sending objects are easier on the front end
+    res.send(result.recordset[0]); //sending objects are easier on the front end
 });
 
 app.post('/hello', async(req, res) => { 

@@ -2,11 +2,12 @@ const { Train } = require('@mui/icons-material');
 const config = require('./dbConfig'),
     sql = require('mssql');
 
-const getTrainerProfile = async(trainerName) => {
+const getTrainerProfile = async(TrainerProfile) => {
     try {
         let pool = await sql.connect(config);
-        let trainers = await pool.request().query(`SELECT * from TrainerProfile WHERE TrainerName = '${trainerName}'`);
-        //console.log(employees);
+        let trainers = await pool.request().query(`SELECT * from TrainerProfile WHERE Email = '${TrainerProfile.Email}'`);
+        console.log("Value returned by query:")
+        console.log(trainers);
         return trainers;
     }
     catch(error) {

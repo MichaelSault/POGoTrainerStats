@@ -12,6 +12,8 @@ import Grid from '@mui/material/Grid';
 import CatchingPokemonIcon from '@mui/icons-material/CatchingPokemon';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import {useState} from 'react';
+
 
 function Copyright(props) {
   return (
@@ -28,14 +30,53 @@ function Copyright(props) {
 const theme = createTheme();
 
 export default function SignInSide() {
+  const [returnedData, setReturnedData] = useState({TrainerID: 0, TrainerName: '', Email: '', Firstname: '', Lastname: '', Password: ''});
+  const [trainer, setTrainer] = useState({Email: '', Password: ''})
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
+    console.log(returnedData);
     console.log({
-      email: data.get('email'),
-      password: data.get('password'),
+      Email: data.get('Email'),
+      Password: data.get('Password'),
     });
   };
+
+  const fetchTrainerData = async () => {
+    
+    const newData = await fetch('http://localhost:5000/api', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify({
+        Email: trainer.Email
+      })
+    })
+    .then(res => res.json());
+    console.log("CALLED API2");
+    console.log(newData);
+    setReturnedData(newData)
+  }
+
+
+  const setInput = (e) => {
+    const {name, value} = e.target;
+    console.log(value);
+    if (name === 'TrainerID'){
+      setTrainer(prevState => ({
+        ...prevState,
+        [name]: parseInt(value)
+      }));
+      return;
+    }
+    setTrainer(prevState => ({
+      ...prevState,
+      [name]: value
+    }));
+  }
 
   return (
     <ThemeProvider theme={theme}>
@@ -69,7 +110,7 @@ export default function SignInSide() {
               <CatchingPokemonIcon />
             </Avatar>
             <Typography component="h1" variant="h5">
-              Sign in
+              Log In
             </Typography>
             <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
               <TextField
@@ -78,19 +119,21 @@ export default function SignInSide() {
                 fullWidth
                 id="email"
                 label="Email Address"
-                name="email"
+                name="Email"
                 autoComplete="email"
+                onChange={setInput}
                 autoFocus
               />
               <TextField
                 margin="normal"
                 required
                 fullWidth
-                name="password"
+                name="Password"
                 label="Password"
                 type="password"
                 id="password"
                 autoComplete="current-password"
+                onChange={setInput}
               />
               <FormControlLabel
                 control={<Checkbox value="remember" color="primary" />}
@@ -101,6 +144,7 @@ export default function SignInSide() {
                 fullWidth
                 variant="contained"
                 sx={{ mt: 3, mb: 2 }}
+                onClick={() => fetchTrainerData()}
               >
                 Sign In
               </Button>
@@ -118,6 +162,10 @@ export default function SignInSide() {
               </Grid>
               <Copyright sx={{ mt: 5 }} />
             </Box>
+            <p>Welcome Trainer: {returnedData.TrainerID}</p>
+            <p>Trainer Name: {returnedData.TrainerName} </p>
+            <p>Name: {returnedData.Firstname} {returnedData.Lastname}</p>
+            <p>Email: {returnedData.Email}</p>
           </Box>
         </Grid>
       </Grid>

@@ -29,7 +29,7 @@ function Copyright(props) {
 const theme = createTheme();
 
 export default function SignUp() {
-  const [returnedData, setReturnedData] = useState({TrainerName: '', Email: '', Firstname: '', Lastname: '', Password: ''});
+  const [returnedData, setReturnedData] = useState({TrainerID: 0, TrainerName: '', Email: '', Firstname: '', Lastname: '', Password: ''});
   const [trainer, setTrainer] = useState({TrainerName: '', Email: '', Firstname: '', Lastname: '', Password: ''})
 
   const handleSubmit = (event) => {
@@ -92,7 +92,7 @@ export default function SignUp() {
             <CatchingPokemonIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
-            Sign up
+            Sign Up
           </Typography>
           <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
             <Grid container spacing={2}>
