@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import SignInSide from './component/SignInSide';
 import SignUp from './component/SignUp';
+import GameplayStats from './component/gameplayStats.component';
 
 function App() {
 
@@ -66,6 +67,7 @@ function App() {
         <Route path='/' element={<SignInSide />}/>
         <Route path='/Login' element={<SignInSide />}/>
         <Route path='/SignUp' element={<SignUp />}/>
+        <Route path='/GameplayMedals' element={<GameplayStats/>}/>
       </Routes>
     </BrowserRouter>
     </>
