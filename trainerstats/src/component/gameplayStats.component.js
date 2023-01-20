@@ -30,111 +30,113 @@ const theme = createTheme();
 
 export default function GameplayStats() {
   const [returnedData, setReturnedData] = useState(
-    {EntryID: 0, 
-    TrainerID: 0,
-    Date: new Date('2016-07-10'),
-    Kanto: 0, 
-    Collector: 0, 
-    Scientist: 0, 
-    Breeder: 0, 
-    Sightseer: 0,
-    PikachuFan: 0,
-    Johto: 0,
-    GymLeader: 0,
-    PokemonRanger: 0,
-    Idol: 0,
-    GreatLeague: 0,
-    Cameraman: 0,
-    Purifier: 0,
-    Triathlete: 0,
-    RisingStar: 0,
-    Picknicker: 0,
-    VivillonCollector:0,
-    Jogger: 0,
-    Backpacker: 0,
-    Fisher: 0,
-    BattleGirl: 0,
-    Youngster: 0,
-    Unown: 0,
-    BerryMaster: 0,
-    Hoenn: 0,
-    Gentleman: 0,
-    Sinnoh: 0,
-    UltraLeagueVeteran: 0,
-    MasterLeagueVeteran: 0,
-    Unova: 0,
-    Hero: 0,
-    Kalos: 0,
-    Alola: 0,
-    Successor: 0,
-    RaidExpert: 0,
-    AceTrainer: 0,
-    Champion: 0,
-    BattleLegend: 0,
-    Pilot: 0,
-    UltraHero: 0,
-    RisingStarDuo: 0,
-    MegaEvolutionGuru: 0,
-    Hisui: 0,
-    BestBuddy: 0,
-    Galar: 0,
-    FriendFinder: 0,
-    TinyPokemonCollector: 0,
-    JumboPokemonCollector: 0,
-    Wayfarer: 0
+    {
+      EntryID: 0, 
+      TrainerID: 0,
+      Date: new Date('2016-07-10'),
+      Kanto: 0, 
+      Collector: 0, 
+      Scientist: 0, 
+      Breeder: 0, 
+      Sightseer: 0,
+      PikachuFan: 0,
+      Johto: 0,
+      GymLeader: 0,
+      PokemonRanger: 0,
+      Idol: 0,
+      GreatLeague: 0,
+      Cameraman: 0,
+      Purifier: 0,
+      Triathlete: 0,
+      RisingStar: 0,
+      Picknicker: 0,
+      VivillonCollector:0,
+      Jogger: 0,
+      Backpacker: 0,
+      Fisher: 0,
+      BattleGirl: 0,
+      Youngster: 0,
+      Unown: 0,
+      BerryMaster: 0,
+      Hoenn: 0,
+      Gentleman: 0,
+      Sinnoh: 0,
+      UltraLeagueVeteran: 0,
+      MasterLeagueVeteran: 0,
+      Unova: 0,
+      Hero: 0,
+      Kalos: 0,
+      Alola: 0,
+      Successor: 0,
+      RaidExpert: 0,
+      AceTrainer: 0,
+      Champion: 0,
+      BattleLegend: 0,
+      Pilot: 0,
+      UltraHero: 0,
+      RisingStarDuo: 0,
+      MegaEvolutionGuru: 0,
+      Hisui: 0,
+      BestBuddy: 0,
+      Galar: 0,
+      FriendFinder: 0,
+      TinyPokemonCollector: 0,
+      JumboPokemonCollector: 0,
+      Wayfarer: 0
     });
 
   const [gameplayStats, setGameplayStats] = useState(
-    {Kanto: 0, 
-    Collector: 0, 
-    Scientist: 0, 
-    Breeder: 0, 
-    Sightseer: 0,
-    PikachuFan: 0,
-    Johto: 0,
-    GymLeader: 0,
-    PokemonRanger: 0,
-    Idol: 0,
-    GreatLeague: 0,
-    Cameraman: 0,
-    Purifier: 0,
-    Triathlete: 0,
-    RisingStar: 0,
-    Picknicker: 0,
-    VivillonCollector:0,
-    Jogger: 0,
-    Backpacker: 0,
-    Fisher: 0,
-    BattleGirl: 0,
-    Youngster: 0,
-    Unown: 0,
-    BerryMaster: 0,
-    Hoenn: 0,
-    Gentleman: 0,
-    Sinnoh: 0,
-    UltraLeagueVeteran: 0,
-    MasterLeagueVeteran: 0,
-    Unova: 0,
-    Hero: 0,
-    Kalos: 0,
-    Alola: 0,
-    Successor: 0,
-    RaidExpert: 0,
-    AceTrainer: 0,
-    Champion: 0,
-    BattleLegend: 0,
-    Pilot: 0,
-    UltraHero: 0,
-    RisingStarDuo: 0,
-    MegaEvolutionGuru: 0,
-    Hisui: 0,
-    BestBuddy: 0,
-    Galar: 0,
-    FriendFinder: 0,
-    TinyPokemonCollector: 0,
-    JumboPokemonCollector: 0,
-    Wayfarer: 0
-    })
+    {
+      Kanto: 0, 
+      Collector: 0, 
+      Scientist: 0, 
+      Breeder: 0, 
+      Sightseer: 0,
+      PikachuFan: 0,
+      Johto: 0,
+      GymLeader: 0,
+      PokemonRanger: 0,
+      Idol: 0,
+      GreatLeague: 0,
+      Cameraman: 0,
+      Purifier: 0,
+      Triathlete: 0,
+      RisingStar: 0,
+      Picknicker: 0,
+      VivillonCollector:0,
+      Jogger: 0,
+      Backpacker: 0,
+      Fisher: 0,
+      BattleGirl: 0,
+      Youngster: 0,
+      Unown: 0,
+      BerryMaster: 0,
+      Hoenn: 0,
+      Gentleman: 0,
+      Sinnoh: 0,
+      UltraLeagueVeteran: 0,
+      MasterLeagueVeteran: 0,
+      Unova: 0,
+      Hero: 0,
+      Kalos: 0,
+      Alola: 0,
+      Successor: 0,
+      RaidExpert: 0,
+      AceTrainer: 0,
+      Champion: 0,
+      BattleLegend: 0,
+      Pilot: 0,
+      UltraHero: 0,
+      RisingStarDuo: 0,
+      MegaEvolutionGuru: 0,
+      Hisui: 0,
+      BestBuddy: 0,
+      Galar: 0,
+      FriendFinder: 0,
+      TinyPokemonCollector: 0,
+      JumboPokemonCollector: 0,
+      Wayfarer: 0
+    });
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -165,7 +167,7 @@ export default function GameplayStats() {
   }
 
   const createGameplayStatEntry = async () => {
-    const newData = await fetch('http://localhost:5000/hello', {
+    const newData = await fetch('http://localhost:5000/gpInput', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -200,558 +202,559 @@ export default function GameplayStats() {
           </Typography>
           <Box component="form" noValidate onSubmit={handleSubmit} sx={{ width: 400 }}>
             <Grid container spacing={2}>
-              <Grid item xs={12} sm={4}>
+              <Grid item xs={12} sm={12}>
                 <TextField
-                  autoComplete="given-name"
-                  name="firstName"
                   fullWidth
-                  id="firstName"
+                  id="kanto"
                   label="Kanto"
+                  name="kanto"
+                  autoComplete="kantoMedal"
                   onChange={setInput}
                   autoFocus
                 />
               </Grid>
-              <Grid item xs={12} sm={4}>
+              <Grid item xs={12} sm={12}>
                 <TextField
                   fullWidth
-                  id="lastName"
+                  id="collector"
                   label="Collector"
-                  name="lastName"
-                  autoComplete="family-name"
+                  name="collector"
+                  autoComplete="collectorMedal"
                   onChange={setInput}
                 />
               </Grid>
-              <Grid item xs={12} sm={4}>
+              <Grid item xs={12} sm={12}>
                 <TextField
                   fullWidth
-                  id="email"
+                  id="scientist"
                   label="Scientist"
-                  name="email"
-                  autoComplete="email"
+                  name="scientist"
+                  autoComplete="scientistMedal"
                   onChange={setInput}
                 />
               </Grid>
 
-              <Grid item xs={12} sm={4}>
+              <Grid item xs={12} sm={12}>
                 <TextField
-                  autoComplete="given-name"
-                  name="firstName"
+                  autoComplete="breederMedal"
+                  name="breeder"
                   fullWidth
-                  id="firstName"
+                  id="breeder"
                   label="Breeder"
                   onChange={setInput}
                 />
               </Grid>
-              <Grid item xs={12} sm={4}>
+              <Grid item xs={12} sm={12}>
                 <TextField
-                  required
+                  
                   fullWidth
-                  id="lastName"
-                  label="Last Name"
-                  name="lastName"
-                  autoComplete="family-name"
+                  id="sightseer"
+                  label="Sightseer"
+                  name="sightseer"
+                  autoComplete="sightseerMedal"
                   onChange={setInput}
                 />
               </Grid>
-              <Grid item xs={12} sm={4}>
+              <Grid item xs={12} sm={12}>
                 <TextField
-                  required
+                  
                   fullWidth
-                  id="email"
-                  label="Email Address"
-                  name="email"
-                  autoComplete="email"
-                  onChange={setInput}
-                />
-              </Grid>
-
-              <Grid item xs={12} sm={4}>
-                <TextField
-                  autoComplete="given-name"
-                  name="firstName"
-                  required
-                  fullWidth
-                  id="firstName"
-                  label="First Name"
-                  onChange={setInput}
-                />
-              </Grid>
-              <Grid item xs={12} sm={4}>
-                <TextField
-                  required
-                  fullWidth
-                  id="lastName"
-                  label="Last Name"
-                  name="lastName"
-                  autoComplete="family-name"
-                  onChange={setInput}
-                />
-              </Grid>
-              <Grid item xs={12} sm={4}>
-                <TextField
-                  required
-                  fullWidth
-                  id="email"
-                  label="Email Address"
-                  name="email"
-                  autoComplete="email"
+                  id="pikachu"
+                  label="Pikachu Fan"
+                  name="pikachu"
+                  autoComplete="pikachuMedal"
                   onChange={setInput}
                 />
               </Grid>
 
-              <Grid item xs={12} sm={4}>
+              <Grid item xs={12} sm={12}>
                 <TextField
-                  autoComplete="given-name"
-                  name="firstName"
-                  required
+                  autoComplete="johtoMedal"
+                  name="johto"
+                  
                   fullWidth
-                  id="firstName"
-                  label="First Name"
+                  id="johto"
+                  label="Johto"
                   onChange={setInput}
                 />
               </Grid>
-              <Grid item xs={12} sm={4}>
+              <Grid item xs={12} sm={12}>
                 <TextField
-                  required
+                  
                   fullWidth
-                  id="lastName"
-                  label="Last Name"
-                  name="lastName"
-                  autoComplete="family-name"
+                  id="gymleader"
+                  label="Gym Leader"
+                  name="gymleader"
+                  autoComplete="gymleaderMedal"
                   onChange={setInput}
                 />
               </Grid>
-              <Grid item xs={12} sm={4}>
+              <Grid item xs={12} sm={12}>
                 <TextField
-                  required
+                  
                   fullWidth
-                  id="email"
-                  label="Email Address"
-                  name="email"
-                  autoComplete="email"
-                  onChange={setInput}
-                />
-              </Grid>
-
-              <Grid item xs={12} sm={4}>
-                <TextField
-                  autoComplete="given-name"
-                  name="firstName"
-                  required
-                  fullWidth
-                  id="firstName"
-                  label="First Name"
-                  onChange={setInput}
-                />
-              </Grid>
-              <Grid item xs={12} sm={4}>
-                <TextField
-                  required
-                  fullWidth
-                  id="lastName"
-                  label="Last Name"
-                  name="lastName"
-                  autoComplete="family-name"
-                  onChange={setInput}
-                />
-              </Grid>
-              <Grid item xs={12} sm={4}>
-                <TextField
-                  required
-                  fullWidth
-                  id="email"
-                  label="Email Address"
-                  name="email"
-                  autoComplete="email"
+                  id="ranger"
+                  label="Pokémon Ranger"
+                  name="ranger"
+                  autoComplete="rangerMedal"
                   onChange={setInput}
                 />
               </Grid>
 
-              <Grid item xs={12} sm={4}>
+              <Grid item xs={12} sm={12}>
                 <TextField
-                  autoComplete="given-name"
-                  name="firstName"
-                  required
+                  autoComplete="idolMedal"
+                  name="idol"
+                  
                   fullWidth
-                  id="firstName"
-                  label="First Name"
+                  id="idol"
+                  label="Idol"
                   onChange={setInput}
                 />
               </Grid>
-              <Grid item xs={12} sm={4}>
+              <Grid item xs={12} sm={12}>
                 <TextField
-                  required
+                  
                   fullWidth
-                  id="lastName"
-                  label="Last Name"
-                  name="lastName"
-                  autoComplete="family-name"
+                  id="glv"
+                  label="Great League Veteran"
+                  name="glv"
+                  autoComplete="glvMedal"
                   onChange={setInput}
                 />
               </Grid>
-              <Grid item xs={12} sm={4}>
+              <Grid item xs={12} sm={12}>
                 <TextField
-                  required
                   fullWidth
-                  id="email"
-                  label="Email Address"
-                  name="email"
-                  autoComplete="email"
-                  onChange={setInput}
-                />
-              </Grid>
-
-              <Grid item xs={12} sm={4}>
-                <TextField
-                  autoComplete="given-name"
-                  name="firstName"
-                  required
-                  fullWidth
-                  id="firstName"
-                  label="First Name"
-                  onChange={setInput}
-                />
-              </Grid>
-              <Grid item xs={12} sm={4}>
-                <TextField
-                  required
-                  fullWidth
-                  id="lastName"
-                  label="Last Name"
-                  name="lastName"
-                  autoComplete="family-name"
-                  onChange={setInput}
-                />
-              </Grid>
-              <Grid item xs={12} sm={4}>
-                <TextField
-                  required
-                  fullWidth
-                  id="email"
-                  label="Email Address"
-                  name="email"
-                  autoComplete="email"
+                  id="cameraman"
+                  label="Cameraman"
+                  name="cameraman"
+                  autoComplete="cameramanMedal"
                   onChange={setInput}
                 />
               </Grid>
 
-              <Grid item xs={12} sm={4}>
+              <Grid item xs={12} sm={12}>
                 <TextField
-                  autoComplete="given-name"
-                  name="firstName"
-                  required
+                  autoComplete="purifierMedal"
+                  name="purifier"
                   fullWidth
-                  id="firstName"
-                  label="First Name"
+                  id="purifier"
+                  label="Purifier"
                   onChange={setInput}
                 />
               </Grid>
-              <Grid item xs={12} sm={4}>
+              <Grid item xs={12} sm={12}>
                 <TextField
-                  required
+                  
                   fullWidth
-                  id="lastName"
-                  label="Last Name"
-                  name="lastName"
-                  autoComplete="family-name"
+                  id="triathlete"
+                  label="Triathlete"
+                  name="triathlete"
+                  autoComplete="triathleteMedal"
                   onChange={setInput}
                 />
               </Grid>
-              <Grid item xs={12} sm={4}>
+              <Grid item xs={12} sm={12}>
                 <TextField
-                  required
+                  
                   fullWidth
-                  id="email"
-                  label="Email Address"
-                  name="email"
-                  autoComplete="email"
-                  onChange={setInput}
-                />
-              </Grid>
-
-              <Grid item xs={12} sm={4}>
-                <TextField
-                  autoComplete="given-name"
-                  name="firstName"
-                  required
-                  fullWidth
-                  id="firstName"
-                  label="First Name"
-                  onChange={setInput}
-                />
-              </Grid>
-              <Grid item xs={12} sm={4}>
-                <TextField
-                  required
-                  fullWidth
-                  id="lastName"
-                  label="Last Name"
-                  name="lastName"
-                  autoComplete="family-name"
-                  onChange={setInput}
-                />
-              </Grid>
-              <Grid item xs={12} sm={4}>
-                <TextField
-                  required
-                  fullWidth
-                  id="email"
-                  label="Email Address"
-                  name="email"
-                  autoComplete="email"
+                  id="risingStar"
+                  label="Rising Star"
+                  name="risingStar"
+                  autoComplete="risingStarMedal"
                   onChange={setInput}
                 />
               </Grid>
 
-              <Grid item xs={12} sm={4}>
+              <Grid item xs={12} sm={12}>
                 <TextField
-                  autoComplete="given-name"
-                  name="firstName"
-                  required
+                  autoComplete="picknickerMedal"
+                  name="picknicker"
+                  
                   fullWidth
-                  id="firstName"
-                  label="First Name"
+                  id="picknicker"
+                  label="Picknicker"
                   onChange={setInput}
                 />
               </Grid>
-              <Grid item xs={12} sm={4}>
+              <Grid item xs={12} sm={12}>
                 <TextField
-                  required
+                  
                   fullWidth
-                  id="lastName"
-                  label="Last Name"
-                  name="lastName"
-                  autoComplete="family-name"
+                  id="vivillon"
+                  label="Vivillon Collector"
+                  name="vivillon"
+                  autoComplete="vivillonMedal"
                   onChange={setInput}
                 />
               </Grid>
-              <Grid item xs={12} sm={4}>
+              <Grid item xs={12} sm={12}>
                 <TextField
-                  required
+                  
                   fullWidth
-                  id="email"
-                  label="Email Address"
-                  name="email"
-                  autoComplete="email"
-                  onChange={setInput}
-                />
-              </Grid>
-
-              <Grid item xs={12} sm={4}>
-                <TextField
-                  autoComplete="given-name"
-                  name="firstName"
-                  required
-                  fullWidth
-                  id="firstName"
-                  label="First Name"
-                  onChange={setInput}
-                />
-              </Grid>
-              <Grid item xs={12} sm={4}>
-                <TextField
-                  required
-                  fullWidth
-                  id="lastName"
-                  label="Last Name"
-                  name="lastName"
-                  autoComplete="family-name"
-                  onChange={setInput}
-                />
-              </Grid>
-              <Grid item xs={12} sm={4}>
-                <TextField
-                  required
-                  fullWidth
-                  id="email"
-                  label="Email Address"
-                  name="email"
-                  autoComplete="email"
+                  id="jogger"
+                  label="Jogger"
+                  name="jogger"
+                  autoComplete="joggerMedal"
                   onChange={setInput}
                 />
               </Grid>
 
-              <Grid item xs={12} sm={4}>
+              <Grid item xs={12} sm={12}>
                 <TextField
-                  autoComplete="given-name"
-                  name="firstName"
-                  required
+                  autoComplete="backpackerMedal"
+                  name="backpacker"
+                  
                   fullWidth
-                  id="firstName"
-                  label="First Name"
-                  onChange={setInput}
-                />
-              </Grid>
-              <Grid item xs={12} sm={4}>
-                <TextField
-                  required
-                  fullWidth
-                  id="lastName"
-                  label="Last Name"
-                  name="lastName"
-                  autoComplete="family-name"
-                  onChange={setInput}
-                />
-              </Grid>
-              <Grid item xs={12} sm={4}>
-                <TextField
-                  required
-                  fullWidth
-                  id="email"
-                  label="Email Address"
-                  name="email"
-                  autoComplete="email"
+                  id="backpacker"
+                  label="Backpacker"
                   onChange={setInput}
                 />
               </Grid>
 
-              <Grid item xs={12} sm={4}>
+              <Grid item xs={12} sm={12}>
                 <TextField
-                  autoComplete="given-name"
-                  name="firstName"
-                  required
+                  
                   fullWidth
-                  id="firstName"
-                  label="First Name"
-                  onChange={setInput}
-                />
-              </Grid>
-              <Grid item xs={12} sm={4}>
-                <TextField
-                  required
-                  fullWidth
-                  id="lastName"
-                  label="Last Name"
-                  name="lastName"
-                  autoComplete="family-name"
-                  onChange={setInput}
-                />
-              </Grid>
-              <Grid item xs={12} sm={4}>
-                <TextField
-                  required
-                  fullWidth
-                  id="email"
-                  label="Email Address"
-                  name="email"
-                  autoComplete="email"
+                  id="fisher"
+                  label="Fisher"
+                  name="fisher"
+                  autoComplete="fisherMedal"
                   onChange={setInput}
                 />
               </Grid>
 
-              <Grid item xs={12} sm={4}>
+              <Grid item xs={12} sm={12}>
                 <TextField
-                  autoComplete="given-name"
-                  name="firstName"
-                  required
+                  autoComplete="battleGirlMedal"
+                  name="battleGirl"
+                  
                   fullWidth
-                  id="firstName"
-                  label="First Name"
-                  onChange={setInput}
-                />
-              </Grid>
-              <Grid item xs={12} sm={4}>
-                <TextField
-                  required
-                  fullWidth
-                  id="lastName"
-                  label="Last Name"
-                  name="lastName"
-                  autoComplete="family-name"
-                  onChange={setInput}
-                />
-              </Grid>
-              <Grid item xs={12} sm={4}>
-                <TextField
-                  required
-                  fullWidth
-                  id="email"
-                  label="Email Address"
-                  name="email"
-                  autoComplete="email"
+                  id="battleGirl"
+                  label="Battle Girl"
                   onChange={setInput}
                 />
               </Grid>
 
-              <Grid item xs={12} sm={4}>
+              <Grid item xs={12} sm={12}>
                 <TextField
-                  autoComplete="given-name"
-                  name="firstName"
-                  required
+                  
                   fullWidth
-                  id="firstName"
-                  label="First Name"
+                  id="youngster"
+                  label="Youngster"
+                  name="youngster"
+                  autoComplete="youngsterMedal"
                   onChange={setInput}
                 />
               </Grid>
-              <Grid item xs={12} sm={4}>
+              <Grid item xs={12} sm={12}>
                 <TextField
-                  required
+                  
                   fullWidth
-                  id="lastName"
-                  label="Last Name"
-                  name="lastName"
-                  autoComplete="family-name"
-                  onChange={setInput}
-                />
-              </Grid>
-              <Grid item xs={12} sm={4}>
-                <TextField
-                  required
-                  fullWidth
-                  id="email"
-                  label="Email Address"
-                  name="email"
-                  autoComplete="email"
+                  id="unown"
+                  label="Unown"
+                  name="unown"
+                  autoComplete="unownMedal"
                   onChange={setInput}
                 />
               </Grid>
 
-              <Grid item xs={12} sm={4}>
+              <Grid item xs={12} sm={12}>
                 <TextField
-                  autoComplete="given-name"
-                  name="firstName"
-                  required
+                  autoComplete="berryMasterMedal"
+                  name="berryMaster"
+                  
                   fullWidth
-                  id="firstName"
-                  label="First Name"
+                  id="berryMaster"
+                  label="Berry Master"
                   onChange={setInput}
                 />
               </Grid>
-              <Grid item xs={12} sm={4}>
+              <Grid item xs={12} sm={12}>
                 <TextField
-                  required
+                  
                   fullWidth
-                  id="lastName"
-                  label="Last Name"
-                  name="lastName"
-                  autoComplete="family-name"
+                  id="hoenn"
+                  label="Hoenn"
+                  name="hoenn"
+                  autoComplete="hoennMedal"
                   onChange={setInput}
                 />
               </Grid>
-              <Grid item xs={12} sm={4}>
+              <Grid item xs={12} sm={12}>
                 <TextField
-                  required
+                  
                   fullWidth
-                  id="email"
-                  label="Email Address"
-                  name="email"
-                  autoComplete="email"
+                  id="gentleman"
+                  label="Gentleman"
+                  name="gentleman"
+                  autoComplete="gentlemanMedal"
                   onChange={setInput}
                 />
               </Grid>
 
-              <Grid item xs={12} sm={4}>
+              <Grid item xs={12} sm={12}>
                 <TextField
-                  autoComplete="given-name"
-                  name="firstName"
-                  required
+                  autoComplete="sinnohMedal"
+                  name="sinnoh"
+                  
                   fullWidth
-                  id="firstName"
-                  label="First Name"
+                  id="sinnoh"
+                  label="Sinnoh"
                   onChange={setInput}
                 />
               </Grid>
+              <Grid item xs={12} sm={12}>
+                <TextField
+                  
+                  fullWidth
+                  id="ulv"
+                  label="Ultra League Veteran"
+                  name="ulv"
+                  autoComplete="ulvMedal"
+                  onChange={setInput}
+                />
+              </Grid>
+              <Grid item xs={12} sm={12}>
+                <TextField
+                  
+                  fullWidth
+                  id="mlv"
+                  label="Master League Veteran"
+                  name="mlv"
+                  autoComplete="mlvMedal"
+                  onChange={setInput}
+                />
+              </Grid>
+
+              <Grid item xs={12} sm={12}>
+                <TextField
+                  autoComplete="unovaMedal"
+                  name="unova"
+                  
+                  fullWidth
+                  id="unova"
+                  label="Unova"
+                  onChange={setInput}
+                />
+              </Grid>
+              <Grid item xs={12} sm={12}>
+                <TextField
+                  
+                  fullWidth
+                  id="hero"
+                  label="Hero"
+                  name="hero"
+                  autoComplete="heroMedal"
+                  onChange={setInput}
+                />
+              </Grid>
+              <Grid item xs={12} sm={12}>
+                <TextField
+                  
+                  fullWidth
+                  id="kalos"
+                  label="Kalos"
+                  name="kalos"
+                  autoComplete="kalosMedal"
+                  onChange={setInput}
+                />
+              </Grid>
+
+              <Grid item xs={12} sm={12}>
+                <TextField
+                  autoComplete="alolaMedal"
+                  name="alola"
+                  
+                  fullWidth
+                  id="alola"
+                  label="Alola"
+                  onChange={setInput}
+                />
+              </Grid>
+              <Grid item xs={12} sm={12}>
+                <TextField
+                  
+                  fullWidth
+                  id="successor"
+                  label="Successor"
+                  name="successor"
+                  autoComplete="successorMedal"
+                  onChange={setInput}
+                />
+              </Grid>
+              <Grid item xs={12} sm={12}>
+                <TextField
+                  
+                  fullWidth
+                  id="raidExpert"
+                  label="Raid Expert"
+                  name="raidExpert"
+                  autoComplete="raidExpertMedal"
+                  onChange={setInput}
+                />
+              </Grid>
+
+              <Grid item xs={12} sm={12}>
+                <TextField
+                  autoComplete="aceTrainerMedal"
+                  name="aceTrainer"
+                  
+                  fullWidth
+                  id="aceTrainer"
+                  label="Ace Trainer"
+                  onChange={setInput}
+                />
+              </Grid>
+              <Grid item xs={12} sm={12}>
+                <TextField
+                  
+                  fullWidth
+                  id="champion"
+                  label="Champion"
+                  name="champion"
+                  autoComplete="championMedal"
+                  onChange={setInput}
+                />
+              </Grid>
+              <Grid item xs={12} sm={12}>
+                <TextField
+                  
+                  fullWidth
+                  id="battleLegend"
+                  label="Battle Legend"
+                  name="battleLegend"
+                  autoComplete="battleLegendMedal"
+                  onChange={setInput}
+                />
+              </Grid>
+
+              <Grid item xs={12} sm={12}>
+                <TextField
+                  autoComplete="pilotMedal"
+                  name="pilot"
+                  
+                  fullWidth
+                  id="pilot"
+                  label="Pilot"
+                  onChange={setInput}
+                />
+              </Grid>
+              <Grid item xs={12} sm={12}>
+                <TextField
+                  
+                  fullWidth
+                  id="ultraHero"
+                  label="Ultra Hero"
+                  name="ultraHero"
+                  autoComplete="ultraHeroMedal"
+                  onChange={setInput}
+                />
+              </Grid>
+              <Grid item xs={12} sm={12}>
+                <TextField
+                  
+                  fullWidth
+                  id="risingStarDuo"
+                  label="Rising Star Duo"
+                  name="risingStarDuo"
+                  autoComplete="risingStarDuoMedal"
+                  onChange={setInput}
+                />
+              </Grid>
+
+              <Grid item xs={12} sm={12}>
+                <TextField
+                  autoComplete="megaMedal"
+                  name="mega"
+                  
+                  fullWidth
+                  id="mega"
+                  label="Mega Evolution Guru"
+                  onChange={setInput}
+                />
+              </Grid>
+              <Grid item xs={12} sm={12}>
+                <TextField
+                  
+                  fullWidth
+                  id="hisui"
+                  label="Hisui"
+                  name="hisui"
+                  autoComplete="hisuiMedal"
+                  onChange={setInput}
+                />
+              </Grid>
+              <Grid item xs={12} sm={12}>
+                <TextField
+                  
+                  fullWidth
+                  id="bestBuddy"
+                  label="Best Buddy"
+                  name="bestBuddy"
+                  autoComplete="bestBuddyMedal"
+                  onChange={setInput}
+                />
+              </Grid>
+
+              <Grid item xs={12} sm={12}>
+                <TextField
+                  autoComplete="galarMedal"
+                  name="galar"
+                  
+                  fullWidth
+                  id="galar"
+                  label="Galar"
+                  onChange={setInput}
+                />
+              </Grid>
+              <Grid item xs={12} sm={12}>
+                <TextField
+                  
+                  fullWidth
+                  id="friendFinder"
+                  label="Friend Finder"
+                  name="friendFinder"
+                  autoComplete="friendFinderMedal"
+                  onChange={setInput}
+                />
+              </Grid>
+              <Grid item xs={12} sm={12}>
+                <TextField
+                  
+                  fullWidth
+                  id="tiny"
+                  label="Tiny Pokémon Collector"
+                  name="tiny"
+                  autoComplete="tinyMedal"
+                  onChange={setInput}
+                />
+              </Grid>
+
+              <Grid item xs={12} sm={12}>
+                <TextField
+                  autoComplete="jumboMedal"
+                  name="jumbo"
+                  
+                  fullWidth
+                  id="jumbo"
+                  label="Jumbo Pokémon Collector"
+                  onChange={setInput}
+                />
+              </Grid>
+              <Grid item xs={12} sm={12}>
+                <TextField
+                  
+                  fullWidth
+                  id="wayfarer"
+                  label="Wayfarer"
+                  name="wayfarer"
+                  autoComplete="wayfarerMedal"
+                  onChange={setInput}
+                />
+              </Grid>
+              
 
             </Grid>
             <Button
@@ -763,13 +766,6 @@ export default function GameplayStats() {
             >
               Record Stats
             </Button>
-            <Grid container justifyContent="flex-end">
-              <Grid item>
-                <Link href="Login" variant="body2">
-                  Already have an account? Sign in
-                </Link>
-              </Grid>
-            </Grid>
           </Box>
         </Box>
         <Copyright sx={{ mt: 5 }} />

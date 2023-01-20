@@ -26,4 +26,18 @@ app.post('/hello', async(req, res) => {
     //res.send(result.recordset);
 });
 
+app.post('/gpInput', async(req, res) => { 
+    await dbOperation.createGameplayEntry(req.body);
+    const result = await dbOperation.createGameplayEntry(req.body);
+    console.log('called gpInput');
+    //res.send(result.recordset);
+});
+
+app.post('/typeInput', async(req, res) => { 
+    await dbOperation.createTypeEntry(req.body);
+    const result = await dbOperation.createTypeEntry(req.body);
+    console.log('called gpInput');
+    //res.send(result.recordset);
+});
+
 app.listen(API_PORT, () => console.log(`Listening on port ${API_PORT}`));
