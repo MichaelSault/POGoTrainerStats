@@ -34,7 +34,7 @@ const createGameplayEntry = async(GameplayEntry) => {
     console.log(GameplayEntry);
     try {
         let pool = await sql.connect(config);
-        let trainers = await pool.request().query(`INSERT INTO GameplayMedals VALUES (
+        let trainers = await pool.request().query(`INSERT INTO GameplayMedals(Kanto, Collector, Scientist, Breeder, Sightseer, PikachuFan, Johto, GymLeader, PokemonRanger, Idol, GreatLeague, Cameraman, Purifier, Triathlete, RisingStar, Picknicker, VivillonCollector, Jogger, Backpacker, Fisher, BattleGirl, Youngster, Unown, BerryMaster, Hoenn, Gentleman, Sinnoh, UltraLeagueVeteran, MasterLeagueVeteran, Unova, Hero, Kalos, Alola, Successor, RaidExpert, AceTrainer, Champion, BattleLegend, Pilot, UltraHero, RisingStarDuo, MegaEvolutionGuru, Hisui, BestBuddy, Galar, FriendFinder, TinyPokemonCollector, JumboPokemonCollector, Wayfarer) VALUES (
             '${GameplayEntry.Kanto}', '${GameplayEntry.Collector}', '${GameplayEntry.Scientist}', '${GameplayEntry.Breeder}', '${GameplayEntry.Sightseer}', '${GameplayEntry.PikachuFan}', '${GameplayEntry.Johto}', '${GameplayEntry.GymLeader}', '${GameplayEntry.PokemonRanger}', '${GameplayEntry.Idol}','${GameplayEntry.GreatLeague}', '${GameplayEntry.Cameraman}', '${GameplayEntry.Purifier}', '${GameplayEntry.Triathlete}', '${GameplayEntry.RisingStar}', '${GameplayEntry.Picknicker}', '${GameplayEntry.VivillonCollector}', '${GameplayEntry.Jogger}', '${GameplayEntry.Backpacker}', '${GameplayEntry.Fisher}', '${GameplayEntry.BattleGirl}', '${GameplayEntry.Youngster}', '${GameplayEntry.Unown}', '${GameplayEntry.BerryMaster}', '${GameplayEntry.Hoenn}', '${GameplayEntry.Gentleman}', '${GameplayEntry.Sinnoh}', '${GameplayEntry.UltraLeagueVeteran}', '${GameplayEntry.MasterLeagueVeteran}', '${GameplayEntry.Unova}', '${GameplayEntry.Hero}', '${GameplayEntry.Kalos}', '${GameplayEntry.Alola}', '${GameplayEntry.Successor}', '${GameplayEntry.RaidExpert}', '${GameplayEntry.AceTrainer}', '${GameplayEntry.Champion}', '${GameplayEntry.BattleLegend}', '${GameplayEntry.Pilot}', '${GameplayEntry.UltraHero}','${GameplayEntry.RisingStarDuo}', '${GameplayEntry.MegaEvolutionGuru}', '${GameplayEntry.Hisui}', '${GameplayEntry.BestBuddy}', '${GameplayEntry.Galar}', '${GameplayEntry.FriendFinder}', '${GameplayEntry.TinyPokemonCollector}', '${GameplayEntry.JumboPokemonCollector}', '${GameplayEntry.Wayfarer}'
         )`);
         //console.log(GameplayEntry.trainerName, GameplayEntry.email, GameplayEntry.firstName, GameplayEntry.lastName, GameplayEntry.password);
@@ -60,10 +60,26 @@ const createTypeEntry = async(TypeEntry) => {
     }
 }
 
+const createTrainerEntry = async(TrainerStatEntry) => {
+    console.log(TrainerStatEntry);
+    try {
+        let pool = await sql.connect(config);
+        let trainers = await pool.request().query(`INSERT INTO TrainerStat(Caught, Seen, DistanceWalked, PokemonCaught, PokestopsVisited, TrainerLevel, TotalXP) VALUES (
+            '${TrainerStatEntry.Caught}', '${TrainerStatEntry.Seen}', '${TrainerStatEntry.DistanceWalked}', '${TrainerStatEntry.PokemonCaught}', '${TrainerStatEntry.PokestopsVisited}','${TrainerStatEntry.TrainerLevel}', '${TrainerStatEntry.TotalXP}'
+        )`);
+        //console.log(TypeEntry.trainerName, TypeEntry.email, TypeEntry.firstName, TypeEntry.lastName, TypeEntry.password);
+        return trainers;
+    }
+    catch(error) {
+        console.log(error);
+    }
+}
+
 
 module.exports = {
     createTrainerProfile,
     getTrainerProfile,
     createGameplayEntry,
-    createTypeEntry
+    createTypeEntry,
+    createTrainerEntry
 }

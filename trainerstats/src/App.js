@@ -6,6 +6,7 @@ import SignInSide from './component/SignInSide';
 import SignUp from './component/SignUp';
 import GameplayStats from './component/gameplayStats.component';
 import TypeStats from './component/typeStats.component';
+import TrainerStats from './component/trainerStats.component';
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
         <Route path='/SignUp' element={<SignUp />}/>
         <Route path='/GameplayMedals' element={<GameplayStats/>}/>
         <Route path='/TypeMedals' element={<TypeStats/>}/>
+        <Route path='/TrainerStats' element={<TrainerStats/>}/>
       </Routes>
     </BrowserRouter>
     </>
