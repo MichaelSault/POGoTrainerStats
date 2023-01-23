@@ -7,6 +7,7 @@ import SignUp from './component/SignUp';
 import GameplayStats from './component/gameplayStats.component';
 import TypeStats from './component/typeStats.component';
 import TrainerStats from './component/trainerStats.component';
+import TrainerProfile from './component/trainerProfile.component';
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
         <Route path='/GameplayMedals' element={<GameplayStats/>}/>
         <Route path='/TypeMedals' element={<TypeStats/>}/>
         <Route path='/TrainerStats' element={<TrainerStats/>}/>
+        <Route path='/TrainerProfile' element={<TrainerProfile/>}/>
       </Routes>
     </BrowserRouter>
     </>

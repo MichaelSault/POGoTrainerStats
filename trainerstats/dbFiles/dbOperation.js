@@ -15,6 +15,19 @@ const getTrainerProfile = async(TrainerProfile) => {
     }
 }
 
+const getTrainerProfileStats = async(TrainerProfile) => {
+    try {
+        let pool = await sql.connect(config);
+        let trainers = await pool.request().query(`SELECT * from TrainerStats WHERE TrainerID = '${TrainerProfile.TrainerID}'`);
+        console.log("Value returned by query:")
+        console.log(trainers);
+        return trainers;
+    }
+    catch(error) {
+        console.log(error);
+    }
+}
+
 const createTrainerProfile = async(TrainerProfile) => {
     console.log(TrainerProfile);
     try {

@@ -19,6 +19,13 @@ app.post('/api', async(req, res) => {
     res.send(result.recordset[0]); //sending objects are easier on the front end
 });
 
+app.post('/profile', async(req, res) => { 
+    console.log(req.body);
+    const result = await dbOperation.getTrainerProfile(req.body);
+    console.log(result.recordset[0]);
+    res.send(result.recordset[0]); //sending objects are easier on the front end
+});
+
 app.post('/hello', async(req, res) => { 
     await dbOperation.createTrainerProfile(req.body);
     const result = await dbOperation.getTrainerProfile(req.body.Firstname);
