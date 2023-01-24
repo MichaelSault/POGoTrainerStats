@@ -62,7 +62,7 @@ export default function TypeStats() {
         PunkGirl: 0,
         RuinManiac: 0,
         Hiker: 0,
-        BUgCatcher: 0,
+        BugCatcher: 0,
         HexManiac: 0,
         RailStaff: 0,
         Kindler: 0,

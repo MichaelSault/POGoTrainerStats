@@ -43,14 +43,35 @@ app.post('/gpInput', async(req, res) => {
 app.post('/typeInput', async(req, res) => { 
     await dbOperation.createTypeEntry(req.body);
     const result = await dbOperation.createTypeEntry(req.body);
-    console.log('called gpInput');
+    console.log('called type input');
     //res.send(result.recordset);
 });
 
 app.post('/trainerStatInput', async(req, res) => { 
     await dbOperation.createTrainerEntry(req.body);
     const result = await dbOperation.createTrainerEntry(req.body);
-    console.log('called gpInput');
+    console.log('called trainer stat input');
+    //res.send(result.recordset);
+});
+
+app.post('/gpFetch', async(req, res) => { 
+    await dbOperation.createTrainerEntry(req.body);
+    const result = await dbOperation.createTrainerEntry(req.body);
+    console.log('called gpFetch');
+    //res.send(result.recordset);
+});
+
+app.post('/typeFetch', async(req, res) => { 
+    await dbOperation.createTrainerEntry(req.body);
+    const result = await dbOperation.createTrainerEntry(req.body);
+    console.log('called typeFetch');
+    //res.send(result.recordset);
+});
+
+app.post('/trainerStatFetch', async(req, res) => { 
+    await dbOperation.createTrainerEntry(req.body);
+    const result = await dbOperation.createTrainerEntry(req.body);
+    console.log('called typeFetch');
     //res.send(result.recordset);
 });
 

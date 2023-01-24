@@ -30,7 +30,7 @@ function Copyright(props) {
 
 const theme = createTheme();
 
-export default function TrainerProfile() {
+export default function GameplayProfile() {
   const [returnedData, setReturnedData] = useState({EntryID: 0, TrainerID: 0, Date: "2022-02-22", Caught: '', Seen: '', DistanceWalked: '', PokemonCaught: '', PokestopsVisited: '', TrainerLevel: 1, TotalXP: 0});
   const [trainer, setTrainer] = useState({trainerID: 0})
 
@@ -45,7 +45,7 @@ export default function TrainerProfile() {
 
   const fetchTrainerProfile = async () => {
     
-    const newData = await fetch('http://localhost:5000/trainerStatFetch', {
+    const newData = await fetch('http://localhost:5000/gpFetch', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -95,7 +95,7 @@ export default function TrainerProfile() {
               <CatchingPokemonIcon />
             </Avatar>
             <Typography component="h1" variant="h5">
-              Trainer Stats
+              Gameplay Medals
             </Typography>
             <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
               <TextField
@@ -132,13 +132,56 @@ export default function TrainerProfile() {
             <p>Welcome Trainer: {returnedData.TrainerID}</p>
             <p>Entry Number: {returnedData.EntryID} </p>
             <p>Entry Date: {returnedData.Date} </p>
-            <p>Pokémon Caught: {returnedData.Caught}</p>
-            <p>Pokémon Seen: {returnedData.Seen}</p>
-            <p>Distance Walked: {returnedData.DistanceWalked}</p>
-            <p>Total Pokémon Caught: {returnedData.PokemonCaught}</p>
-            <p>Pokéstops Visited: {returnedData.PokestopsVisited}</p>
-            <p>Trainer Level: {returnedData.TrainerLevel}</p>
-            <p>TotalXP: {returnedData.TotalXP}</p>
+            <p>Kanto: {returnedData.Kanto}</p>
+            <p>Collector: {returnedData.Collector}</p>
+            <p>Scientist: {returnedData.Scientist}</p>
+            <p>Breeder:  {returnedData.Breeder}</p>
+            <p>Sightseer: {returnedData.Sightseer}</p>
+            <p>Pikachu Fan: {returnedData.PikachuFan}</p>
+            <p>Johto: {returnedData.Johto}</p>
+            <p>Gym Leader: {returnedData.GymLeader}</p>
+            <p>Pokemon Ranger: {returnedData.PokemonRanger}</p>
+            <p>Idol: {returnedData.Idol}</p>
+            <p>GreatLeague: {returnedData.GreatLeague}</p>
+            <p>Cameraman: {returnedData.Cameraman}</p>
+            <p>Purifier: {returnedData.Purifier}</p>
+            <p>Triathlete: {returnedData.Triathlete}</p>
+            <p>RisingStar: {returnedData.RisingStar}</p>
+            <p>Picknicker: {returnedData.Picknicker}</p>
+            <p>Vivillon Collector: {returnedData.VivillonCollector}</p>
+            <p>Jogger: {returnedData.Jogger}</p>
+            <p>Backpacker: {returnedData.Backpacker}</p>
+            <p>Fisher: {returnedData.Fisher}</p>
+            <p>Battle Girl: {returnedData.BattleGirl}</p>
+            <p>Youngster: {returnedData.Youngster}</p>
+            <p>Unown: {returnedData.Unown}</p>
+            <p>Berry Master: {returnedData.BerryMaster}</p>
+            <p>Hoenn: {returnedData.Hoenn}</p>
+            <p>Gentleman: {returnedData.Gentleman}</p>
+            <p>Sinnoh: {returnedData.Sinnoh}</p>
+            <p>Ultra League Veteran: {returnedData.UltraLeagueVeteran}</p>
+            <p>Master League Veteran: {returnedData.MasterLeagueVeteran}</p>
+            <p>Unova: {returnedData.Unova}</p>
+            <p>Hero: {returnedData.Hero}</p>
+            <p>Kalos: {returnedData.Kalos}</p>
+            <p>Alola: {returnedData.Alola}</p>
+            <p>Successor: {returnedData.Successor}</p>
+            <p>Raid Expert: {returnedData.RaidExpert}</p>
+            <p>Ace Trainer: {returnedData.AceTrainer}</p>
+            <p>Champion: {returnedData.Champion}</p>
+            <p>Battle Legend: {returnedData.BattleLegend}</p>
+            <p>Pilot: {returnedData.Pilot}</p>
+            <p>Ultra Hero: {returnedData.UltraHero}</p>
+            <p>Rising Star Duo: {returnedData.RisingStarDuo}</p>
+            <p>Mega Evolution Guru: {returnedData.MegaEvolutionGuru}</p>
+            <p>Hisui: {returnedData.Hisui}</p>
+            <p>Best Buddy: {returnedData.BestBuddy}</p>
+            <p>Galar: {returnedData.Galar}</p>
+            <p>Friend Finder: {returnedData.FriendFinder}</p>
+            <p>Tiny Pokemon Collector: {returnedData.TinyPokemonCollector}</p>
+            <p>Jumbo Pokemon Collector: {returnedData.JumboPokemonCollector}</p>
+            <p>Wayfarer: {returnedData.Wayfarer}</p>
+
             <Copyright sx={{ mt: 5 }} />
           </Box>
       </Container>

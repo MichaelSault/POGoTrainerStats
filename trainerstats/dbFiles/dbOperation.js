@@ -88,6 +88,8 @@ const createTrainerEntry = async(TrainerStatEntry) => {
     }
 }
 
+//create fetch operations for type and gameplay stats tomorrow
+
 
 module.exports = {
     createTrainerProfile,

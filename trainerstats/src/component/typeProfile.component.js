@@ -30,7 +30,7 @@ function Copyright(props) {
 
 const theme = createTheme();
 
-export default function TrainerProfile() {
+export default function TypeProfile() {
   const [returnedData, setReturnedData] = useState({EntryID: 0, TrainerID: 0, Date: "2022-02-22", Caught: '', Seen: '', DistanceWalked: '', PokemonCaught: '', PokestopsVisited: '', TrainerLevel: 1, TotalXP: 0});
   const [trainer, setTrainer] = useState({trainerID: 0})
 
@@ -45,7 +45,7 @@ export default function TrainerProfile() {
 
   const fetchTrainerProfile = async () => {
     
-    const newData = await fetch('http://localhost:5000/trainerStatFetch', {
+    const newData = await fetch('http://localhost:5000/typeFetch', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -95,7 +95,7 @@ export default function TrainerProfile() {
               <CatchingPokemonIcon />
             </Avatar>
             <Typography component="h1" variant="h5">
-              Trainer Stats
+              Type Medals
             </Typography>
             <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
               <TextField
@@ -132,13 +132,24 @@ export default function TrainerProfile() {
             <p>Welcome Trainer: {returnedData.TrainerID}</p>
             <p>Entry Number: {returnedData.EntryID} </p>
             <p>Entry Date: {returnedData.Date} </p>
-            <p>Pokémon Caught: {returnedData.Caught}</p>
-            <p>Pokémon Seen: {returnedData.Seen}</p>
-            <p>Distance Walked: {returnedData.DistanceWalked}</p>
-            <p>Total Pokémon Caught: {returnedData.PokemonCaught}</p>
-            <p>Pokéstops Visited: {returnedData.PokestopsVisited}</p>
-            <p>Trainer Level: {returnedData.TrainerLevel}</p>
-            <p>TotalXP: {returnedData.TotalXP}</p>
+            <p>Normal Pokémon Caught: {returnedData.Schoolkid}</p>
+            <p>Fighting Pokémon Caught: {returnedData.BlackBelt}</p>
+            <p>Flying Pokémon Caught: {returnedData.BirdKeeper}</p>
+            <p>Poison Pokémon Caught: {returnedData.PunkGirl}</p>
+            <p>Ground Pokémon Caught: {returnedData.RuinManiac}</p>
+            <p>Rock Pokémon Caught: {returnedData.Hiker}</p>
+            <p>Bug Pokémon Caught: {returnedData.BugCatcher}</p>
+            <p>Ghost Pokémon Caught: {returnedData.HexManiac}</p>
+            <p>Steel Pokémon Caught: {returnedData.RailStaff}</p>
+            <p>Fire Pokémon Caught: {returnedData.Kindler}</p>
+            <p>Water Pokémon Caught: {returnedData.Swimmer}</p>
+            <p>Grass Pokémon Caught: {returnedData.Gardener}</p>
+            <p>Thunder Pokémon Caught: {returnedData.Rocker}</p>
+            <p>Psychic Pokémon Caught: {returnedData.Psychic}</p>
+            <p>Ice Pokémon Caught: {returnedData.Skier}</p>
+            <p>Dragon Pokémon Caught: {returnedData.DragonTamer}</p>
+            <p>Dark Pokémon Caught: {returnedData.Delinquent}</p>
+            <p>Fairy Pokémon Caught: {returnedData.FairyTaleGirl}</p>
             <Copyright sx={{ mt: 5 }} />
           </Box>
       </Container>
