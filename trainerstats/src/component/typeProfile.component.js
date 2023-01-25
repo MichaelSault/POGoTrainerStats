@@ -32,7 +32,7 @@ const theme = createTheme();
 
 export default function TypeProfile() {
   const [returnedData, setReturnedData] = useState({EntryID: 0, TrainerID: 0, Date: "2022-02-22", Caught: '', Seen: '', DistanceWalked: '', PokemonCaught: '', PokestopsVisited: '', TrainerLevel: 1, TotalXP: 0});
-  const [trainer, setTrainer] = useState({trainerID: 0})
+  const [trainer, setTrainer] = useState({TrainerID: 0})
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -52,7 +52,7 @@ export default function TypeProfile() {
         'Accept': 'application/json'
       },
       body: JSON.stringify({
-        Email: trainer.Email
+        TrainerID: trainer.TrainerID
       })
     })
     .then(res => res.json());

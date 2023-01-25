@@ -15,10 +15,36 @@ const getTrainerProfile = async(TrainerProfile) => {
     }
 }
 
-const getTrainerProfileStats = async(TrainerProfile) => {
+const getGameplayEntry = async(TrainerProfile) => {
+    try {
+        let pool = await sql.connect(config);
+        let trainers = await pool.request().query(`SELECT * from GameplayMedals WHERE TrainerID = '${TrainerProfile.TrainerID}'`);
+        console.log("Value returned by query:")
+        console.log(trainers);
+        return trainers;
+    }
+    catch(error) {
+        console.log(error);
+    }
+}
+
+const getTrainerEntry = async(TrainerProfile) => {
     try {
         let pool = await sql.connect(config);
         let trainers = await pool.request().query(`SELECT * from TrainerStats WHERE TrainerID = '${TrainerProfile.TrainerID}'`);
+        console.log("Value returned by query:")
+        console.log(trainers);
+        return trainers;
+    }
+    catch(error) {
+        console.log(error);
+    }
+}
+
+const getTypeEntry = async(TrainerProfile) => {
+    try {
+        let pool = await sql.connect(config);
+        let trainers = await pool.request().query(`SELECT * from TypeMedals WHERE TrainerID = '${TrainerProfile.TrainerID}'`);
         console.log("Value returned by query:")
         console.log(trainers);
         return trainers;
@@ -93,7 +119,10 @@ const createTrainerEntry = async(TrainerStatEntry) => {
 
 module.exports = {
     createTrainerProfile,
+    getGameplayEntry,
     getTrainerProfile,
+    getTrainerEntry,
+    getTypeEntry,
     createGameplayEntry,
     createTypeEntry,
     createTrainerEntry

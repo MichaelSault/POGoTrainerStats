@@ -12,15 +12,13 @@ app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use(cors()); 
 
-app.post('/api', async(req, res) => { 
-    console.log(req.body);
+app.post('/api', async(req, res) => {
     const result = await dbOperation.getTrainerProfile(req.body);
     console.log(result.recordset[0]);
     res.send(result.recordset[0]); //sending objects are easier on the front end
 });
 
 app.post('/profile', async(req, res) => { 
-    console.log(req.body);
     const result = await dbOperation.getTrainerProfile(req.body);
     console.log(result.recordset[0]);
     res.send(result.recordset[0]); //sending objects are easier on the front end
@@ -55,24 +53,25 @@ app.post('/trainerStatInput', async(req, res) => {
 });
 
 app.post('/gpFetch', async(req, res) => { 
-    await dbOperation.createTrainerEntry(req.body);
-    const result = await dbOperation.createTrainerEntry(req.body);
+    await dbOperation.getGameplayEntry(req.body);
+    const result = await dbOperation.getGameplayEntry(req.body);
     console.log('called gpFetch');
     //res.send(result.recordset);
 });
 
 app.post('/typeFetch', async(req, res) => { 
-    await dbOperation.createTrainerEntry(req.body);
-    const result = await dbOperation.createTrainerEntry(req.body);
+    await dbOperation.getTypeEntry(req.body);
+    const result = await dbOperation.getTypeEntry(req.body);
     console.log('called typeFetch');
     //res.send(result.recordset);
 });
 
 app.post('/trainerStatFetch', async(req, res) => { 
-    await dbOperation.createTrainerEntry(req.body);
-    const result = await dbOperation.createTrainerEntry(req.body);
-    console.log('called typeFetch');
-    //res.send(result.recordset);
+    await dbOperation.getTrainerEntry(req.body);
+    const result = await dbOperation.getTrainerEntry(req.body);
+    console.log("req.body:")
+    console.log(req.body);
+    //res.send(result.recordset[0]);
 });
 
 app.listen(API_PORT, () => console.log(`Listening on port ${API_PORT}`));
