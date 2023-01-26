@@ -56,14 +56,14 @@ app.post('/gpFetch', async(req, res) => {
     await dbOperation.getGameplayEntry(req.body);
     const result = await dbOperation.getGameplayEntry(req.body);
     console.log('called gpFetch');
-    //res.send(result.recordset);
+    res.send(result.recordset[0]);
 });
 
 app.post('/typeFetch', async(req, res) => { 
     await dbOperation.getTypeEntry(req.body);
     const result = await dbOperation.getTypeEntry(req.body);
     console.log('called typeFetch');
-    //res.send(result.recordset);
+    res.send(result.recordset[0]);
 });
 
 app.post('/trainerStatFetch', async(req, res) => { 
@@ -71,7 +71,7 @@ app.post('/trainerStatFetch', async(req, res) => {
     const result = await dbOperation.getTrainerEntry(req.body);
     console.log("req.body:")
     console.log(req.body);
-    //res.send(result.recordset[0]);
+    res.send(result.recordset[0]);
 });
 
 app.listen(API_PORT, () => console.log(`Listening on port ${API_PORT}`));

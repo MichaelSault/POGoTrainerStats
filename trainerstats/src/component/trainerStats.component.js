@@ -121,10 +121,10 @@ export default function TrainerStats() {
               <Grid item xs={6} sm={6}>
                 <TextField
                   fullWidth
-                  id="caught"
+                  id="Caught"
                   label="Caught"
-                  name="caught"
-                  autoComplete="caught"
+                  name="Caught"
+                  autoComplete="Caught"
                   onChange={setInput}
                   autoFocus
                 />
@@ -132,9 +132,9 @@ export default function TrainerStats() {
               <Grid item xs={6} sm={6}>
                 <TextField
                   fullWidth
-                  id="seen"
+                  id="Seen"
                   label="Seen"
-                  name="seen"
+                  name="Seen"
                   autoComplete="seen"
                   onChange={setInput}
                 />
@@ -142,9 +142,9 @@ export default function TrainerStats() {
               <Grid item xs={12} sm={12}>
                 <TextField
                   fullWidth
-                  id="distanceWalked"
+                  id="DistanceWalked"
                   label="Distance Walked"
-                  name="distanceWalked"
+                  name="DistanceWalked"
                   autoComplete="distanceWalked"
                   onChange={setInput}
                 />
@@ -152,9 +152,9 @@ export default function TrainerStats() {
               <Grid item xs={12} sm={12}>
                 <TextField
                   fullWidth
-                  id="pokemonCaught"
+                  id="PokemonCaught"
                   label="Pokémon Caught"
-                  name="pokemonCaught"
+                  name="PokemonCaught"
                   autoComplete="pokemonCaught"
                   onChange={setInput}
                 />
@@ -162,9 +162,9 @@ export default function TrainerStats() {
               <Grid item xs={12} sm={12}>
                 <TextField
                   fullWidth
-                  id="pokestopsVisited"
+                  id="PokestopsVisited"
                   label="Pokéstops Visited"
-                  name="pokestopsVisited"
+                  name="PokestopsVisited"
                   autoComplete="pokestopsVisited"
                   onChange={setInput}
                 />
@@ -172,9 +172,9 @@ export default function TrainerStats() {
               <Grid item xs={3} sm={3}>
                 <TextField
                   fullWidth
-                  id="trainerLevel"
+                  id="TrainerLevel"
                   label="Level"
-                  name="trainerLevel"
+                  name="TrainerLevel"
                   autoComplete="trainerLevel"
                   onChange={setInput}
                 />
@@ -182,9 +182,9 @@ export default function TrainerStats() {
               <Grid item xs={9} sm={9}>
                 <TextField
                   fullWidth
-                  id="xp"
+                  id="TotalXp"
                   label="Total XP"
-                  name="xp"
+                  name="TotalXP"
                   autoComplete="xp"
                   onChange={setInput}
                 />

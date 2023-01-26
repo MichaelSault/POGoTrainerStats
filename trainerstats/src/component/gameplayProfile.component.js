@@ -52,7 +52,7 @@ export default function GameplayProfile() {
         'Accept': 'application/json'
       },
       body: JSON.stringify({
-        Email: trainer.Email
+        TrainerID: trainer.TrainerID
       })
     })
     .then(res => res.json());

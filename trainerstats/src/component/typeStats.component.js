@@ -51,7 +51,7 @@ export default function TypeStats() {
         Skier: 0,
         DragonTamer: 0,
         Delinquent: 0,
-        FairyTailGirl: 0
+        FairyTaleGirl: 0
     });
 
   const [typeStats, setTypeStats] = useState(
@@ -73,19 +73,12 @@ export default function TypeStats() {
         Skier: 0,
         DragonTamer: 0,
         Delinquent: 0,
-        FairyTailGirl: 0
+        FairyTaleGirl: 0
     });
 
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    console.log({
-      trainerName: data.get('trainerName'),
-      email: data.get('email'),
-      firstName: data.get('firstName'),
-      lastName: data.get('lastName'), 
-      password: data.get('password'),
-    });
   };
 
   const setInput = (e) => {
@@ -143,10 +136,10 @@ export default function TypeStats() {
               <Grid item xs={12} sm={12}>
                 <TextField
                   fullWidth
-                  id="schoolkid"
+                  id="Schoolkid"
                   label="Schoolkid"
-                  name="schoolkid"
-                  autoComplete="schoolkidMedal"
+                  name="Schoolkid"
+                  autoComplete="SchoolkidMedal"
                   onChange={setInput}
                   autoFocus
                 />
@@ -154,170 +147,170 @@ export default function TypeStats() {
               <Grid item xs={12} sm={12}>
                 <TextField
                   fullWidth
-                  id="blackbelt"
+                  id="BlackBelt"
                   label="Black Belt"
-                  name="blackbelt"
-                  autoComplete="blackbeltMedal"
+                  name="BlackBelt"
+                  autoComplete="BlackBeltMedal"
                   onChange={setInput}
                 />
               </Grid>
               <Grid item xs={12} sm={12}>
                 <TextField
                   fullWidth
-                  id="birdKeeper"
+                  id="BirdKeeper"
                   label="Bird Keeper"
-                  name="birdkeeper"
-                  autoComplete="birdkeeperMedal"
+                  name="BirdKeeper"
+                  autoComplete="BirdKeeperMedal"
                   onChange={setInput}
                 />
               </Grid>
               <Grid item xs={12} sm={12}>
                 <TextField
                   fullWidth
-                  id="punkgirl"
+                  id="PunkGirl"
                   label="Punk Girl"
-                  name="punkgirl"
-                  autoComplete="punkgirlMedal"
+                  name="PunkGirl"
+                  autoComplete="PunkGirlMedal"
                   onChange={setInput}
                 />
               </Grid>
               <Grid item xs={12} sm={12}>
                 <TextField
                   fullWidth
-                  id="ruinmaniac"
+                  id="RuinManiac"
                   label="Ruin Maniac"
-                  name="ruinmaniac"
-                  autoComplete="ruinmaniacMedal"
+                  name="RuinManiac"
+                  autoComplete="RuinManiacMedal"
                   onChange={setInput}
                 />
               </Grid>
               <Grid item xs={12} sm={12}>
                 <TextField
                   fullWidth
-                  id="hiker"
+                  id="Hiker"
                   label="Hiker"
-                  name="hiker"
-                  autoComplete="hikerMedal"
+                  name="Hiker"
+                  autoComplete="HikerMedal"
                   onChange={setInput}
                 />
               </Grid>
               <Grid item xs={12} sm={12}>
                 <TextField
                   fullWidth
-                  id="bugcatcher"
+                  id="BugCatcher"
                   label="Bug Catcher"
-                  name="bugcatcher"
-                  autoComplete="bugcatcherMedal"
+                  name="BugCatcher"
+                  autoComplete="BugCatcherMedal"
                   onChange={setInput}
                 />
               </Grid>
               <Grid item xs={12} sm={12}>
                 <TextField
                   fullWidth
-                  id="hexmaniac"
+                  id="HexManiac"
                   label="Hex Maniac"
-                  name="hexmaniac"
-                  autoComplete="hexmaniacMedal"
+                  name="HexManiac"
+                  autoComplete="HexManiacMedal"
                   onChange={setInput}
                 />
               </Grid>
               <Grid item xs={12} sm={12}>
                 <TextField
                   fullWidth
-                  id="railstaff"
+                  id="RailStaff"
                   label="Rail Staff"
-                  name="railstaff"
-                  autoComplete="railstaffMedal"
+                  name="RailStaff"
+                  autoComplete="RailStaffMedal"
                   onChange={setInput}
                 />
               </Grid>
               <Grid item xs={12} sm={12}>
                 <TextField
                   fullWidth
-                  id="kindler"
+                  id="Kindler"
                   label="Kindler"
-                  name="kindler"
-                  autoComplete="kindlerMedal"
+                  name="Kindler"
+                  autoComplete="KindlerMedal"
                   onChange={setInput}
                 />
               </Grid>
               <Grid item xs={12} sm={12}>
                 <TextField
                   fullWidth
-                  id="swimmer"
+                  id="Swimmer"
                   label="Swimmer"
-                  name="swimmer"
-                  autoComplete="swimmerMedal"
+                  name="Swimmer"
+                  autoComplete="SwimmerMedal"
                   onChange={setInput}
                 />
               </Grid>
               <Grid item xs={12} sm={12}>
                 <TextField
                   fullWidth
-                  id="gardener"
+                  id="Gardener"
                   label="Gardener"
-                  name="gardener"
-                  autoComplete="gardenerMedal"
+                  name="Gardener"
+                  autoComplete="GardenerMedal"
                   onChange={setInput}
                 />
               </Grid>
               <Grid item xs={12} sm={12}>
                 <TextField
                   fullWidth
-                  id="rocker"
+                  id="Rocker"
                   label="Rocker"
-                  name="rocker"
-                  autoComplete="rockerMedal"
+                  name="Rocker"
+                  autoComplete="RockerMedal"
                   onChange={setInput}
                 />
               </Grid>
               <Grid item xs={12} sm={12}>
                 <TextField
                   fullWidth
-                  id="psychic"
+                  id="Psychic"
                   label="Psychic"
-                  name="psychic"
-                  autoComplete="psychicMedal"
+                  name="Psychic"
+                  autoComplete="PsychicMedal"
                   onChange={setInput}
                 />
               </Grid>
               <Grid item xs={12} sm={12}>
                 <TextField
                   fullWidth
-                  id="skier"
+                  id="Skier"
                   label="Skier"
-                  name="skier"
-                  autoComplete="skierMedal"
+                  name="Skier"
+                  autoComplete="SkierMedal"
                   onChange={setInput}
                 />
               </Grid>
               <Grid item xs={12} sm={12}>
                 <TextField
                   fullWidth
-                  id="dragontamer"
+                  id="DragonTamer"
                   label="Dragon Tamer"
-                  name="dragontamer"
-                  autoComplete="dragontamerMedal"
+                  name="DragonTamer"
+                  autoComplete="DragonTamerMedal"
                   onChange={setInput}
                 />
               </Grid>
               <Grid item xs={12} sm={12}>
                 <TextField
                   fullWidth
-                  id="delinquent"
+                  id="Delinquent"
                   label="Delinquent"
-                  name="delinquent"
-                  autoComplete="delinquentMedal"
+                  name="Delinquent"
+                  autoComplete="DelinquentMedal"
                   onChange={setInput}
                 />
               </Grid>
               <Grid item xs={12} sm={12}>
                 <TextField
                   fullWidth
-                  id="fairytalegirl"
+                  id="FairyTaleGirl"
                   label="Fairy Tale Girl"
-                  name="fairytalegirl"
-                  autoComplete="fairytalegirlMedal"
+                  name="FairyTaleGirl"
+                  autoComplete="FairyTaleGirlMedal"
                   onChange={setInput}
                 />
               </Grid>
