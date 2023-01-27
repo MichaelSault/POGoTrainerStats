@@ -1,3 +1,6 @@
 # POGoTrainerStats
-SQL Stat Tracker
-React-App Front End
+
+Stack Used:
+- React(Front End)
+- Node.js/Express (Back End)
+- MSSQL Server hosted locally
