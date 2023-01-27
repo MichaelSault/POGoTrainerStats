@@ -61,8 +61,8 @@ export default function GameplayStats() {
       Hoenn: 0,
       Gentleman: 0,
       Sinnoh: 0,
-      UltraLeagueVeteran: 0,
-      MasterLeagueVeteran: 0,
+      UltraLeague: 0,
+      MasterLeague: 0,
       Unova: 0,
       Hero: 0,
       Kalos: 0,
@@ -114,8 +114,8 @@ export default function GameplayStats() {
       Hoenn: 0,
       Gentleman: 0,
       Sinnoh: 0,
-      UltraLeagueVeteran: 0,
-      MasterLeagueVeteran: 0,
+      UltraLeague: 0,
+      MasterLeague: 0,
       Unova: 0,
       Hero: 0,
       Kalos: 0,
@@ -205,9 +205,9 @@ export default function GameplayStats() {
               <Grid item xs={12} sm={12}>
                 <TextField
                   fullWidth
-                  id="kanto"
+                  id="Kanto"
                   label="Kanto"
-                  name="kanto"
+                  name="Kanto"
                   autoComplete="kantoMedal"
                   onChange={setInput}
                   autoFocus
@@ -216,9 +216,9 @@ export default function GameplayStats() {
               <Grid item xs={12} sm={12}>
                 <TextField
                   fullWidth
-                  id="collector"
+                  id="Collector"
                   label="Collector"
-                  name="collector"
+                  name="Collector"
                   autoComplete="collectorMedal"
                   onChange={setInput}
                 />
@@ -226,9 +226,9 @@ export default function GameplayStats() {
               <Grid item xs={12} sm={12}>
                 <TextField
                   fullWidth
-                  id="scientist"
+                  id="Scientist"
                   label="Scientist"
-                  name="scientist"
+                  name="Scientist"
                   autoComplete="scientistMedal"
                   onChange={setInput}
                 />
@@ -236,32 +236,30 @@ export default function GameplayStats() {
 
               <Grid item xs={12} sm={12}>
                 <TextField
-                  autoComplete="breederMedal"
-                  name="breeder"
                   fullWidth
-                  id="breeder"
+                  id="Breeder"
                   label="Breeder"
+                  name="Breeder"
+                  autoComplete="breederMedal"
                   onChange={setInput}
                 />
               </Grid>
               <Grid item xs={12} sm={12}>
                 <TextField
-                  
                   fullWidth
-                  id="sightseer"
+                  id="Sightseer"
                   label="Sightseer"
-                  name="sightseer"
+                  name="Sightseer"
                   autoComplete="sightseerMedal"
                   onChange={setInput}
                 />
               </Grid>
               <Grid item xs={12} sm={12}>
                 <TextField
-                  
                   fullWidth
-                  id="pikachu"
+                  id="PikachuFan"
                   label="Pikachu Fan"
-                  name="pikachu"
+                  name="PikachuFan"
                   autoComplete="pikachuMedal"
                   onChange={setInput}
                 />
@@ -269,33 +267,30 @@ export default function GameplayStats() {
 
               <Grid item xs={12} sm={12}>
                 <TextField
-                  autoComplete="johtoMedal"
-                  name="johto"
-                  
-                  fullWidth
-                  id="johto"
+                  fullWidth                
+                  id="Johto"
                   label="Johto"
+                  name="Johto"
+                  autoComplete="johtoMedal"
                   onChange={setInput}
                 />
               </Grid>
               <Grid item xs={12} sm={12}>
                 <TextField
-                  
                   fullWidth
-                  id="gymleader"
+                  id="GymLeader"
                   label="Gym Leader"
-                  name="gymleader"
+                  name="GymLeader"
                   autoComplete="gymleaderMedal"
                   onChange={setInput}
                 />
               </Grid>
               <Grid item xs={12} sm={12}>
                 <TextField
-                  
                   fullWidth
-                  id="ranger"
+                  id="PokemonRanger"
                   label="Pokémon Ranger"
-                  name="ranger"
+                  name="PokemonRanger"
                   autoComplete="rangerMedal"
                   onChange={setInput}
                 />
@@ -303,22 +298,20 @@ export default function GameplayStats() {
 
               <Grid item xs={12} sm={12}>
                 <TextField
-                  autoComplete="idolMedal"
-                  name="idol"
-                  
                   fullWidth
-                  id="idol"
+                  id="Idol"
                   label="Idol"
+                  name="Idol"
+                  autoComplete="idolMedal"
                   onChange={setInput}
                 />
               </Grid>
               <Grid item xs={12} sm={12}>
                 <TextField
-                  
                   fullWidth
-                  id="glv"
+                  id="GreatLeague"
                   label="Great League Veteran"
-                  name="glv"
+                  name="GreatLeague"
                   autoComplete="glvMedal"
                   onChange={setInput}
                 />
@@ -326,9 +319,9 @@ export default function GameplayStats() {
               <Grid item xs={12} sm={12}>
                 <TextField
                   fullWidth
-                  id="cameraman"
+                  id="Cameraman"
                   label="Cameraman"
-                  name="cameraman"
+                  name="Cameraman"
                   autoComplete="cameramanMedal"
                   onChange={setInput}
                 />
@@ -336,32 +329,30 @@ export default function GameplayStats() {
 
               <Grid item xs={12} sm={12}>
                 <TextField
-                  autoComplete="purifierMedal"
-                  name="purifier"
                   fullWidth
-                  id="purifier"
+                  id="Purifier"
                   label="Purifier"
+                  name="Purifier"
+                  autoComplete="purifierMedal"
                   onChange={setInput}
                 />
               </Grid>
               <Grid item xs={12} sm={12}>
                 <TextField
-                  
                   fullWidth
-                  id="triathlete"
+                  id="Triathlete"
                   label="Triathlete"
-                  name="triathlete"
+                  name="Triathlete"
                   autoComplete="triathleteMedal"
                   onChange={setInput}
                 />
               </Grid>
               <Grid item xs={12} sm={12}>
                 <TextField
-                  
                   fullWidth
-                  id="risingStar"
+                  id="RisingStar"
                   label="Rising Star"
-                  name="risingStar"
+                  name="RisingStar"
                   autoComplete="risingStarMedal"
                   onChange={setInput}
                 />
@@ -369,33 +360,30 @@ export default function GameplayStats() {
 
               <Grid item xs={12} sm={12}>
                 <TextField
-                  autoComplete="picknickerMedal"
-                  name="picknicker"
-                  
                   fullWidth
-                  id="picknicker"
+                  id="Picknicker"
                   label="Picknicker"
+                  name="Picknicker"
+                  autoComplete="picknickerMedal"
                   onChange={setInput}
                 />
               </Grid>
               <Grid item xs={12} sm={12}>
                 <TextField
-                  
                   fullWidth
-                  id="vivillon"
+                  id="VivillonCollector"
                   label="Vivillon Collector"
-                  name="vivillon"
+                  name="VivillonCollector"
                   autoComplete="vivillonMedal"
                   onChange={setInput}
                 />
               </Grid>
               <Grid item xs={12} sm={12}>
                 <TextField
-                  
                   fullWidth
-                  id="jogger"
+                  id="Jogger"
                   label="Jogger"
-                  name="jogger"
+                  name="Jogger"
                   autoComplete="joggerMedal"
                   onChange={setInput}
                 />
@@ -403,23 +391,21 @@ export default function GameplayStats() {
 
               <Grid item xs={12} sm={12}>
                 <TextField
-                  autoComplete="backpackerMedal"
-                  name="backpacker"
-                  
                   fullWidth
-                  id="backpacker"
+                  id="Backpacker"
                   label="Backpacker"
+                  name="Backpacker"
+                  autoComplete="backpackerMedal"
                   onChange={setInput}
                 />
               </Grid>
 
               <Grid item xs={12} sm={12}>
                 <TextField
-                  
                   fullWidth
-                  id="fisher"
+                  id="Fisher"
                   label="Fisher"
-                  name="fisher"
+                  name="Fisher"
                   autoComplete="fisherMedal"
                   onChange={setInput}
                 />
@@ -427,34 +413,31 @@ export default function GameplayStats() {
 
               <Grid item xs={12} sm={12}>
                 <TextField
-                  autoComplete="battleGirlMedal"
-                  name="battleGirl"
-                  
                   fullWidth
-                  id="battleGirl"
+                  id="BattleGirl"
                   label="Battle Girl"
+                  name="BattleGirl"
+                  autoComplete="battleGirlMedal"
                   onChange={setInput}
                 />
               </Grid>
 
               <Grid item xs={12} sm={12}>
                 <TextField
-                  
                   fullWidth
-                  id="youngster"
+                  id="Youngster"
                   label="Youngster"
-                  name="youngster"
+                  name="Youngster"
                   autoComplete="youngsterMedal"
                   onChange={setInput}
                 />
               </Grid>
               <Grid item xs={12} sm={12}>
                 <TextField
-                  
                   fullWidth
-                  id="unown"
+                  id="Unown"
                   label="Unown"
-                  name="unown"
+                  name="Unown"
                   autoComplete="unownMedal"
                   onChange={setInput}
                 />
@@ -462,33 +445,30 @@ export default function GameplayStats() {
 
               <Grid item xs={12} sm={12}>
                 <TextField
-                  autoComplete="berryMasterMedal"
-                  name="berryMaster"
-                  
                   fullWidth
-                  id="berryMaster"
+                  id="BerryMaster"
                   label="Berry Master"
+                  name="BerryMaster"
+                  autoComplete="berryMasterMedal"
                   onChange={setInput}
                 />
               </Grid>
               <Grid item xs={12} sm={12}>
                 <TextField
-                  
                   fullWidth
-                  id="hoenn"
+                  id="Hoenn"
                   label="Hoenn"
-                  name="hoenn"
+                  name="Hoenn"
                   autoComplete="hoennMedal"
                   onChange={setInput}
                 />
               </Grid>
               <Grid item xs={12} sm={12}>
                 <TextField
-                  
                   fullWidth
-                  id="gentleman"
+                  id="Gentleman"
                   label="Gentleman"
-                  name="gentleman"
+                  name="Gentleman"
                   autoComplete="gentlemanMedal"
                   onChange={setInput}
                 />
@@ -496,33 +476,30 @@ export default function GameplayStats() {
 
               <Grid item xs={12} sm={12}>
                 <TextField
-                  autoComplete="sinnohMedal"
-                  name="sinnoh"
-                  
                   fullWidth
-                  id="sinnoh"
+                  id="Sinnoh"
                   label="Sinnoh"
+                  name="Sinnoh"
+                  autoComplete="sinnohMedal"
                   onChange={setInput}
                 />
               </Grid>
               <Grid item xs={12} sm={12}>
                 <TextField
-                  
                   fullWidth
-                  id="ulv"
+                  id="UltraLeague"
                   label="Ultra League Veteran"
-                  name="ulv"
+                  name="UltraLeague"
                   autoComplete="ulvMedal"
                   onChange={setInput}
                 />
               </Grid>
               <Grid item xs={12} sm={12}>
                 <TextField
-                  
                   fullWidth
-                  id="mlv"
+                  id="MasterLeague"
                   label="Master League Veteran"
-                  name="mlv"
+                  name="MasterLeague"
                   autoComplete="mlvMedal"
                   onChange={setInput}
                 />
@@ -530,33 +507,30 @@ export default function GameplayStats() {
 
               <Grid item xs={12} sm={12}>
                 <TextField
-                  autoComplete="unovaMedal"
-                  name="unova"
-                  
                   fullWidth
-                  id="unova"
+                  id="Unova"
                   label="Unova"
+                  name="Unova"
+                  autoComplete="unovaMedal"
                   onChange={setInput}
                 />
               </Grid>
               <Grid item xs={12} sm={12}>
                 <TextField
-                  
                   fullWidth
-                  id="hero"
+                  id="Hero"
                   label="Hero"
-                  name="hero"
+                  name="Hero"
                   autoComplete="heroMedal"
                   onChange={setInput}
                 />
               </Grid>
               <Grid item xs={12} sm={12}>
                 <TextField
-                  
                   fullWidth
-                  id="kalos"
+                  id="Kalos"
                   label="Kalos"
-                  name="kalos"
+                  name="Kalos"
                   autoComplete="kalosMedal"
                   onChange={setInput}
                 />
@@ -564,33 +538,30 @@ export default function GameplayStats() {
 
               <Grid item xs={12} sm={12}>
                 <TextField
-                  autoComplete="alolaMedal"
-                  name="alola"
-                  
                   fullWidth
-                  id="alola"
+                  id="Alola"
                   label="Alola"
+                  name="Alola"
+                  autoComplete="alolaMedal"
                   onChange={setInput}
                 />
               </Grid>
               <Grid item xs={12} sm={12}>
                 <TextField
-                  
                   fullWidth
-                  id="successor"
+                  id="Successor"
                   label="Successor"
-                  name="successor"
+                  name="Successor"
                   autoComplete="successorMedal"
                   onChange={setInput}
                 />
               </Grid>
               <Grid item xs={12} sm={12}>
                 <TextField
-                  
                   fullWidth
-                  id="raidExpert"
+                  id="RaidExpert"
                   label="Raid Expert"
-                  name="raidExpert"
+                  name="RaidExpert"
                   autoComplete="raidExpertMedal"
                   onChange={setInput}
                 />
@@ -598,33 +569,30 @@ export default function GameplayStats() {
 
               <Grid item xs={12} sm={12}>
                 <TextField
-                  autoComplete="aceTrainerMedal"
-                  name="aceTrainer"
-                  
                   fullWidth
-                  id="aceTrainer"
+                  id="AceTrainer"
                   label="Ace Trainer"
+                  name="AceTrainer"
+                  autoComplete="aceTrainerMedal"
                   onChange={setInput}
                 />
               </Grid>
               <Grid item xs={12} sm={12}>
                 <TextField
-                  
                   fullWidth
-                  id="champion"
+                  id="Champion"
                   label="Champion"
-                  name="champion"
+                  name="Champion"
                   autoComplete="championMedal"
                   onChange={setInput}
                 />
               </Grid>
               <Grid item xs={12} sm={12}>
                 <TextField
-                  
                   fullWidth
-                  id="battleLegend"
+                  id="BattleLegend"
                   label="Battle Legend"
-                  name="battleLegend"
+                  name="BattleLegend"
                   autoComplete="battleLegendMedal"
                   onChange={setInput}
                 />
@@ -632,33 +600,30 @@ export default function GameplayStats() {
 
               <Grid item xs={12} sm={12}>
                 <TextField
-                  autoComplete="pilotMedal"
-                  name="pilot"
-                  
                   fullWidth
-                  id="pilot"
+                  id="Pilot"
                   label="Pilot"
+                  name="Pilot"
+                  autoComplete="pilotMedal"
                   onChange={setInput}
                 />
               </Grid>
               <Grid item xs={12} sm={12}>
                 <TextField
-                  
                   fullWidth
-                  id="ultraHero"
+                  id="UltraHero"
                   label="Ultra Hero"
-                  name="ultraHero"
+                  name="UltraHero"
                   autoComplete="ultraHeroMedal"
                   onChange={setInput}
                 />
               </Grid>
               <Grid item xs={12} sm={12}>
                 <TextField
-                  
                   fullWidth
-                  id="risingStarDuo"
+                  id="RisingStarDuo"
                   label="Rising Star Duo"
-                  name="risingStarDuo"
+                  name="RisingStarDuo"
                   autoComplete="risingStarDuoMedal"
                   onChange={setInput}
                 />
@@ -666,33 +631,30 @@ export default function GameplayStats() {
 
               <Grid item xs={12} sm={12}>
                 <TextField
-                  autoComplete="megaMedal"
-                  name="mega"
-                  
                   fullWidth
-                  id="mega"
+                  id="MegaEvolutionGuru"
                   label="Mega Evolution Guru"
+                  name="MegaEvolutionGuru"
+                  autoComplete="megaMedal"
                   onChange={setInput}
                 />
               </Grid>
               <Grid item xs={12} sm={12}>
                 <TextField
-                  
                   fullWidth
-                  id="hisui"
+                  id="Hisui"
                   label="Hisui"
-                  name="hisui"
+                  name="Hisui"
                   autoComplete="hisuiMedal"
                   onChange={setInput}
                 />
               </Grid>
               <Grid item xs={12} sm={12}>
                 <TextField
-                  
                   fullWidth
-                  id="bestBuddy"
+                  id="BestBuddy"
                   label="Best Buddy"
-                  name="bestBuddy"
+                  name="BestBuddy"
                   autoComplete="bestBuddyMedal"
                   onChange={setInput}
                 />
@@ -700,33 +662,30 @@ export default function GameplayStats() {
 
               <Grid item xs={12} sm={12}>
                 <TextField
-                  autoComplete="galarMedal"
-                  name="galar"
-                  
                   fullWidth
-                  id="galar"
+                  id="Galar"
                   label="Galar"
+                  name="Galar"
+                  autoComplete="galarMedal"
                   onChange={setInput}
                 />
               </Grid>
               <Grid item xs={12} sm={12}>
                 <TextField
-                  
                   fullWidth
-                  id="friendFinder"
+                  id="FriendFinder"
                   label="Friend Finder"
-                  name="friendFinder"
+                  name="FriendFinder"
                   autoComplete="friendFinderMedal"
                   onChange={setInput}
                 />
               </Grid>
               <Grid item xs={12} sm={12}>
                 <TextField
-                  
                   fullWidth
-                  id="tiny"
+                  id="TinyPokemonCollector"
                   label="Tiny Pokémon Collector"
-                  name="tiny"
+                  name="TinyPokemonCollector"
                   autoComplete="tinyMedal"
                   onChange={setInput}
                 />
@@ -734,22 +693,20 @@ export default function GameplayStats() {
 
               <Grid item xs={12} sm={12}>
                 <TextField
-                  autoComplete="jumboMedal"
-                  name="jumbo"
-                  
                   fullWidth
-                  id="jumbo"
+                  id="JumboPokemonCollector"
                   label="Jumbo Pokémon Collector"
+                  name="JumboPokemonCollector"
+                  autoComplete="jumboMedal"
                   onChange={setInput}
                 />
               </Grid>
               <Grid item xs={12} sm={12}>
                 <TextField
-                  
                   fullWidth
-                  id="wayfarer"
+                  id="Wayfarer"
                   label="Wayfarer"
-                  name="wayfarer"
+                  name="Wayfarer"
                   autoComplete="wayfarerMedal"
                   onChange={setInput}
                 />
