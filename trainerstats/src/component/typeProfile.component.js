@@ -37,6 +37,7 @@ export default function TypeProfile() {
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
+    console.log("1012");
     console.log(returnedData);
     console.log({
       TrainerID: data.get('TrainerID')
@@ -59,6 +60,7 @@ export default function TypeProfile() {
     console.log("CALLED PROFILE");
     console.log(newData);
     setReturnedData(newData)
+    
   }
 
 

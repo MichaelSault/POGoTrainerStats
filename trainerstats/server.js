@@ -21,35 +21,31 @@ app.post('/api', async(req, res) => {
 app.post('/profile', async(req, res) => { 
     const result = await dbOperation.getTrainerProfile(req.body);
     console.log(result.recordset[0]);
-    res.send(result.recordset[0]); //sending objects are easier on the front end
+    res.send(result.recordset[0]);
 });
 
 app.post('/hello', async(req, res) => { 
     await dbOperation.createTrainerProfile(req.body);
     const result = await dbOperation.getTrainerProfile(req.body.Firstname);
     console.log('called hello');
-    //res.send(result.recordset);
 });
 
 app.post('/gpInput', async(req, res) => { 
     await dbOperation.createGameplayEntry(req.body);
     const result = await dbOperation.createGameplayEntry(req.body);
     console.log('called gpInput');
-    //res.send(result.recordset);
 });
 
 app.post('/typeInput', async(req, res) => { 
     await dbOperation.createTypeEntry(req.body);
     const result = await dbOperation.createTypeEntry(req.body);
     console.log('called type input');
-    //res.send(result.recordset);
 });
 
 app.post('/trainerStatInput', async(req, res) => { 
     await dbOperation.createTrainerEntry(req.body);
     const result = await dbOperation.createTrainerEntry(req.body);
     console.log('called trainer stat input');
-    //res.send(result.recordset);
 });
 
 app.post('/gpFetch', async(req, res) => { 
@@ -71,6 +67,12 @@ app.post('/trainerStatFetch', async(req, res) => {
     const result = await dbOperation.getTrainerEntry(req.body);
     console.log("req.body:")
     console.log(req.body);
+    res.send(result.recordset[0]);
+});
+
+app.post('/fetchAll', async(req, res) => { 
+    const result = await dbOperation.getTrainerProfile(req.body);
+    console.log(result.recordset[0]);
     res.send(result.recordset[0]);
 });
 

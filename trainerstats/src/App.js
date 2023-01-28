@@ -10,6 +10,7 @@ import TrainerStats from './component/trainerStats.component';
 import TrainerProfile from './component/trainerProfile.component';
 import GameplayProfile from './component/gameplayProfile.component';
 import TypeProfile from './component/typeProfile.component';
+import AllStats from './component/allTrainerStats.component';
 
 function App() {
 
@@ -26,6 +27,7 @@ function App() {
         <Route path='/TrainerProfile' element={<TrainerProfile/>}/>
         <Route path='/GameplayProfile' element={<GameplayProfile/>}/>
         <Route path='/TypeProfile' element={<TypeProfile/>}/>
+        <Route path='/AllStats' element={<AllStats/>}/>
       </Routes>
     </BrowserRouter>
     </>
