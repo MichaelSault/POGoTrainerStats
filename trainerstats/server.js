@@ -76,4 +76,10 @@ app.post('/fetchAll', async(req, res) => {
     res.send(result.recordset[0]);
 });
 
+app.post('/fetchStatHistory', async(req, res) => { 
+    const result = await dbOperation.getStatHistory(req.body);
+    console.log(result.recordset);
+    res.send(result.recordset);
+});
+
 app.listen(API_PORT, () => console.log(`Listening on port ${API_PORT}`));

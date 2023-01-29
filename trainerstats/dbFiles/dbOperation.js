@@ -28,6 +28,19 @@ const getGameplayEntry = async(TrainerProfile) => {
     }
 }
 
+const getStatHistory = async(StatQuery) => {
+    try {
+        let pool = await sql.connect(config);
+        let statHistory = await pool.request().query(`SELECT '${StatQuery.Stat}', Date from TrainerStats WHERE TrainerID = '${StatQuery.TrainerID}' ORDER BY Date`);
+        console.log("Value returned by query:")
+        console.log(statHistory);
+        return statHistory;
+    }
+    catch(error) {
+        console.log(error);
+    }
+}
+
 const getTrainerEntry = async(TrainerProfile) => {
     try {
         let pool = await sql.connect(config);
@@ -113,9 +126,11 @@ const createTrainerEntry = async(TrainerStatEntry) => {
     }
 }
 
+
 module.exports = {
     createTrainerProfile,
     getGameplayEntry,
+    getStatHistory,
     getTrainerProfile,
     getTrainerEntry,
     getTypeEntry,
