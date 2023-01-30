@@ -31,8 +31,10 @@ const getGameplayEntry = async(TrainerProfile) => {
 const getStatHistory = async(StatQuery) => {
     try {
         let pool = await sql.connect(config);
-        let statHistory = await pool.request().query(`SELECT '${StatQuery.Stat}', Date from TrainerStats WHERE TrainerID = '${StatQuery.TrainerID}' ORDER BY Date`);
-        console.log("Value returned by query:")
+        console.log("Column To Query:")
+        console.log(StatQuery.Stat);
+        let statHistory = await pool.request().query(`SELECT ${StatQuery.Stat}, Date from TrainerStats WHERE TrainerID = '${StatQuery.TrainerID}' ORDER BY Date`);
+        
         console.log(statHistory);
         return statHistory;
     }

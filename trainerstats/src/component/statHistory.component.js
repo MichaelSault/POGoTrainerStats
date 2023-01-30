@@ -28,11 +28,16 @@ function Copyright(props) {
   );
 }
 
+function displayStatData(stat, statName){
+  var prop = statName;
+  document.getElementById('ParsedStatArray').innerHTML = stat[0][prop];
+}
+
 const theme = createTheme();
 
 export default function StatHistory() {
   const [returnedData, setReturnedData] = useState({TrainerID: 0, TrainerName: '', Email: '', Firstname: '', Lastname: '', Password: ''});
-  const [returnedStatHistory, setReturnedStatHistory] = useState({EntryID: 0, TrainerID: 0, Date: "2022-02-22", Caught: '', Seen: '', DistanceWalked: '', PokemonCaught: '', PokestopsVisited: '', TrainerLevel: 1, TotalXP: 0});
+  const [returnedStatHistory, setReturnedStatHistory] = useState({EntryID: 0, Date: "2022-02-22" });
   
   const [trainer, setTrainer] = useState({Email: '', Stat: ''})
 
@@ -90,12 +95,15 @@ export default function StatHistory() {
         'Accept': 'application/json'
       },
       body: JSON.stringify({
-        TrainerID: trainerID
+        TrainerID: trainerID,
+        Stat: trainer.Stat
       })
     })
     .then(res => res.json());
     console.log("CALLED PROFILE");
-    console.log(newData);
+    console.log(newData[0].Caught);
+    setReturnedStatHistory(newData);
+    displayStatData(newData, trainer.Stat);
   }
 
   return (
@@ -172,6 +180,12 @@ export default function StatHistory() {
             <p>Email: {returnedData.Email}</p>
             <Divider variant="middle" />
             <h3>{trainer.Stat}</h3>
+
+            <p>{returnedStatHistory.length}</p>
+            
+            
+            
+            <p id='ParsedStatArray' />
 
             <Copyright sx={{ mt: 5 }} />
           </Box>
