@@ -40,15 +40,22 @@ export default function StatHistory() {
 
   function displayStatData(stat, statName){
     console.log(stat[0][statName])
-    var statArray = stat.map(returnStat);
-    
+    var statArray = stat.map(buildStatArray);
+    var printArray = statArray.map(printStatArray);;
   
-    document.getElementById('ParsedStatArray').innerHTML = statArray;
+    document.getElementById('ParsedStatArray').innerHTML = printArray;
   }
   
-  function returnStat(item){
-    console.log(item[trainer.Stat]);
-    return item.Caught;
+  function buildStatArray(item){
+    console.log(item[trainer.Stat], item.Date);
+    var statValue = item[trainer.Stat];
+    var dateValue = item.Date;
+    var statsArrayEntry = [statValue, dateValue];
+    return statsArrayEntry;
+  }
+
+  function printStatArray(item){
+    return item[0];
   }
 
 
