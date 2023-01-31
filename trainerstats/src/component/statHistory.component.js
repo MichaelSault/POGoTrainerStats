@@ -3,8 +3,8 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
+// import FormControlLabel from '@mui/material/FormControlLabel';
+// import Checkbox from '@mui/material/Checkbox';
 import Link from '@mui/material/Link';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
@@ -28,10 +28,7 @@ function Copyright(props) {
   );
 }
 
-function displayStatData(stat, statName){
-  var prop = statName;
-  document.getElementById('ParsedStatArray').innerHTML = stat[0][prop];
-}
+
 
 const theme = createTheme();
 
@@ -40,6 +37,20 @@ export default function StatHistory() {
   const [returnedStatHistory, setReturnedStatHistory] = useState({EntryID: 0, Date: "2022-02-22" });
   
   const [trainer, setTrainer] = useState({Email: '', Stat: ''})
+
+  function displayStatData(stat, statName){
+    console.log(stat[0][statName])
+    var statArray = stat.map(returnStat);
+    
+  
+    document.getElementById('ParsedStatArray').innerHTML = statArray;
+  }
+  
+  function returnStat(item){
+    console.log(item[trainer.Stat]);
+    return item.Caught;
+  }
+
 
   const handleSubmit = (event) => {
     event.preventDefault();
