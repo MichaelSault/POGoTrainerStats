@@ -3,8 +3,6 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
-// import FormControlLabel from '@mui/material/FormControlLabel';
-// import Checkbox from '@mui/material/Checkbox';
 import Link from '@mui/material/Link';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
@@ -12,8 +10,30 @@ import Grid from '@mui/material/Grid';
 import CatchingPokemonIcon from '@mui/icons-material/CatchingPokemon';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import { Divider } from '@mui/material';
+
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend,
+} from 'chart.js';
+
+import {Bar} from 'react-chartjs-2';
+
+
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend
+)
 
 
 function Copyright(props) {
@@ -28,8 +48,6 @@ function Copyright(props) {
   );
 }
 
-
-
 const theme = createTheme();
 
 export default function StatHistory() {
@@ -38,10 +56,67 @@ export default function StatHistory() {
   
   const [trainer, setTrainer] = useState({Email: '', Stat: ''})
 
+  const [chartData, setChartData] = useState({
+    datasets: [],
+  });
+
+  const [chartOptions, setChartOptions] = useState({});
+
+  useEffect(() => {
+    setChartData({
+      labels: ["", "","",""],
+      datasets: [
+        {
+          label: "",
+          data: [0, 0, 0, 0],
+          borderColor: "black",
+          backgroundColor: "grey",
+        },
+      ],
+    });
+    setChartOptions({
+      responsive: true,
+      plugins: {
+        legend: {
+          position: "top"
+        },
+        title: {
+          display: true,
+          text: ""
+        }
+      }
+    })
+  }, []);
+
   function displayStatData(stat, statName){
     console.log(stat[0][statName])
     var statArray = stat.map(buildStatArray);
-    var printArray = statArray.map(printStatArray);;
+    var printArray = statArray.map(printStatArray);
+    var dateArray = statArray.map(dateStatArray);
+
+    setChartData({
+      labels: dateArray,
+      datasets: [
+        {
+          label: "Trainer Stats over time",
+          data: printArray,
+          borderColor: "black",
+          backgroundColor: "cyan",
+        },
+      ],
+    });
+    setChartOptions({
+      responsive: true,
+      plugins: {
+        legend: {
+          position: "top"
+        },
+        title: {
+          display: true,
+          text: "Dogs, who let them out?"
+        }
+      }
+    })
   
     document.getElementById('ParsedStatArray').innerHTML = printArray;
   }
@@ -56,6 +131,10 @@ export default function StatHistory() {
 
   function printStatArray(item){
     return item[0];
+  }
+
+  function dateStatArray(item){
+    return item[1];
   }
 
 
@@ -201,7 +280,7 @@ export default function StatHistory() {
 
             <p>{returnedStatHistory.length}</p>
             
-            
+            <Bar options={chartOptions} data={chartData}/>
             
             <p id='ParsedStatArray' />
 
