@@ -13,23 +13,26 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import {useState, useEffect} from 'react';
 import { Divider } from '@mui/material';
 
+
 import {
   Chart as ChartJS,
   CategoryScale,
   LinearScale,
-  BarElement,
+  PointElement,
+  LineElement,
   Title,
   Tooltip,
   Legend,
 } from 'chart.js';
 
-import {Bar} from 'react-chartjs-2';
+import {Line} from 'react-chartjs-2';
 
 
 ChartJS.register(
   CategoryScale,
   LinearScale,
-  BarElement,
+  PointElement,
+  LineElement,
   Title,
   Tooltip,
   Legend
@@ -98,10 +101,10 @@ export default function StatHistory() {
       labels: dateArray,
       datasets: [
         {
-          label: "Trainer Stats over time",
+          label: "",
           data: printArray,
-          borderColor: "black",
-          backgroundColor: "cyan",
+          borderColor: "firebrick",
+          backgroundColor: "black",
         },
       ],
     });
@@ -113,7 +116,7 @@ export default function StatHistory() {
         },
         title: {
           display: true,
-          text: "Dogs, who let them out?"
+          text: "Trainer Stats over time"
         }
       }
     })
@@ -280,7 +283,7 @@ export default function StatHistory() {
 
             <p>{returnedStatHistory.length}</p>
             
-            <Bar options={chartOptions} data={chartData}/>
+            <Line options={chartOptions} data={chartData}/>
             
             <p id='ParsedStatArray' />
 

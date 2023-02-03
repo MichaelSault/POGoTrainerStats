@@ -1,7 +1,6 @@
 import './App.css';
 import React, {useState} from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-
 import SignInSide from './component/SignInSide';
 import SignUp from './component/SignUp';
 import GameplayStats from './component/gameplayStats.component';
