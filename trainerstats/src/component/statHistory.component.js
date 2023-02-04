@@ -57,7 +57,7 @@ export default function StatHistory() {
   const [returnedData, setReturnedData] = useState({TrainerID: 0, TrainerName: '', Email: '', Firstname: '', Lastname: '', Password: ''});
   const [returnedStatHistory, setReturnedStatHistory] = useState({EntryID: 0, Date: "2022-02-22" });
   
-  const [trainer, setTrainer] = useState({Email: '', Stat: ''})
+  const [trainer, setTrainer] = useState({Email: '', Stat: '', Stat2: ''})
 
   const [chartData, setChartData] = useState({
     datasets: [],
@@ -91,10 +91,13 @@ export default function StatHistory() {
     })
   }, []);
 
-  function displayStatData(stat, statName){
+  function displayStatData(stat, stat2, statName, statName2){
     console.log(stat[0][statName])
+    console.log(stat2[0][statName2])
     var statArray = stat.map(buildStatArray);
+    var statArray2 = stat2.map(buildStatArray)
     var printArray = statArray.map(printStatArray);
+    var printArray2 = statArray2.map(printStatArray);
     var dateArray = statArray.map(dateStatArray);
 
     setChartData({
@@ -127,8 +130,9 @@ export default function StatHistory() {
   function buildStatArray(item){
     console.log(item[trainer.Stat], item.Date);
     var statValue = item[trainer.Stat];
+    var statValue2 = item[trainer.Stat2];
     var dateValue = item.Date;
-    var statsArrayEntry = [statValue, dateValue];
+    var statsArrayEntry = [statValue, statValue2, dateValue];
     return statsArrayEntry;
   }
 
@@ -147,7 +151,8 @@ export default function StatHistory() {
     console.log(returnedData);
     console.log({
       TrainerID: data.get('TrainerID'),
-      Stat: data.get('Stat')
+      Stat: data.get('Stat'),
+      Stat2: data.get('Stat2')
     });
   };
 
@@ -196,7 +201,8 @@ export default function StatHistory() {
       },
       body: JSON.stringify({
         TrainerID: trainerID,
-        Stat: trainer.Stat
+        Stat: trainer.Stat,
+        Stat2: trainer.Stat2
       })
     })
     .then(res => res.json());
@@ -256,9 +262,19 @@ export default function StatHistory() {
                 margin="normal"
                 required
                 fullWidth
-                id="stat"
-                label="Stat"
-                name="Stat"
+                id="stat1"
+                label="Stat #1"
+                name="Stat1"
+                autoComplete="stat"
+                onChange={setInput}
+              />
+              <TextField
+                margin="normal"
+                required
+                fullWidth
+                id="stat2"
+                label="Stat #2"
+                name="Stat2"
                 autoComplete="stat"
                 onChange={setInput}
               />
