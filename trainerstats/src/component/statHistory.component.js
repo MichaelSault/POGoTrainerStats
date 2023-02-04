@@ -91,13 +91,12 @@ export default function StatHistory() {
     })
   }, []);
 
-  function displayStatData(stat, stat2, statName, statName2){
+  function displayStatData(stat, statName, statName2){
     console.log(stat[0][statName])
-    console.log(stat2[0][statName2])
+    console.log(stat[0][statName2])
     var statArray = stat.map(buildStatArray);
-    var statArray2 = stat2.map(buildStatArray)
     var printArray = statArray.map(printStatArray);
-    var printArray2 = statArray2.map(printStatArray);
+    var printArray2 = statArray.map(printStatArray);
     var dateArray = statArray.map(dateStatArray);
 
     setChartData({
@@ -151,7 +150,7 @@ export default function StatHistory() {
     console.log(returnedData);
     console.log({
       TrainerID: data.get('TrainerID'),
-      Stat: data.get('Stat'),
+      Stat: data.get('Stat1'),
       Stat2: data.get('Stat2')
     });
   };
@@ -174,7 +173,6 @@ export default function StatHistory() {
     setReturnedData(newData);
     fetchStatHistory(newData.TrainerID);
   }
-
 
   const setInput = (e) => {
     const {name, value} = e.target;
@@ -209,7 +207,7 @@ export default function StatHistory() {
     console.log("CALLED PROFILE");
     console.log(newData[0].Caught);
     setReturnedStatHistory(newData);
-    displayStatData(newData, trainer.Stat);
+    displayStatData(newData, trainer.Stat, trainer.Stat2);
   }
 
   return (

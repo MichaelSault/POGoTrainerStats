@@ -71,6 +71,7 @@ app.post('/trainerStatFetch', async(req, res) => {
 });
 
 app.post('/fetchAll', async(req, res) => { 
+    console.log(req.body);
     const result = await dbOperation.getTrainerProfile(req.body);
     console.log(result.recordset[0]);
     res.send(result.recordset[0]);
@@ -78,7 +79,7 @@ app.post('/fetchAll', async(req, res) => {
 
 app.post('/fetchStatHistory', async(req, res) => { 
     const result = await dbOperation.getStatHistory(req.body);
-    console.log(result.recordset);
+    console.log(result.recordset[0]);
     res.send(result.recordset);
 });
 

@@ -33,7 +33,8 @@ const getStatHistory = async(StatQuery) => {
         let pool = await sql.connect(config);
         console.log("Column To Query:")
         console.log(StatQuery.Stat);
-        let statHistory = await pool.request().query(`SELECT ${StatQuery.Stat}, Date from TrainerStats WHERE TrainerID = '${StatQuery.TrainerID}' ORDER BY Date`);
+        console.log(StatQuery.Stat2);
+        let statHistory = await pool.request().query(`SELECT ${StatQuery.Stat}, ${StatQuery.Stat2} Date from TrainerStats WHERE TrainerID = '${StatQuery.TrainerID}' ORDER BY Date`);
         
         console.log(statHistory);
         return statHistory;
