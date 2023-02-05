@@ -19,8 +19,8 @@ const getGameplayEntry = async(TrainerProfile) => {
     try {
         let pool = await sql.connect(config);
         let trainers = await pool.request().query(`SELECT * from GameplayMedals WHERE TrainerID = '${TrainerProfile.TrainerID}'`);
-        console.log("Value returned by query:")
-        console.log(trainers);
+        //console.log("Value returned by query:")
+        //console.log(trainers);
         return trainers;
     }
     catch(error) {
@@ -31,10 +31,10 @@ const getGameplayEntry = async(TrainerProfile) => {
 const getStatHistory = async(StatQuery) => {
     try {
         let pool = await sql.connect(config);
-        console.log("Column To Query:")
-        console.log(StatQuery.Stat);
-        console.log(StatQuery.Stat2);
-        let statHistory = await pool.request().query(`SELECT ${StatQuery.Stat}, ${StatQuery.Stat2} Date from TrainerStats WHERE TrainerID = '${StatQuery.TrainerID}' ORDER BY Date`);
+        //console.log("Column To Query:")
+        //console.log(StatQuery.Stat1);
+        //console.log(StatQuery.Stat2);
+        let statHistory = await pool.request().query(`SELECT ${StatQuery.Stat}, ${StatQuery.Stat2}, Date from TrainerStats WHERE TrainerID = '${StatQuery.TrainerID}' ORDER BY Date`);
         
         console.log(statHistory);
         return statHistory;

@@ -92,25 +92,46 @@ export default function StatHistory() {
   }, []);
 
   function displayStatData(stat, statName, statName2){
-    console.log(stat[0][statName])
-    console.log(stat[0][statName2])
+    console.log(stat)
+    console.log(statName2)
     var statArray = stat.map(buildStatArray);
     var printArray = statArray.map(printStatArray);
-    var printArray2 = statArray.map(printStatArray);
-    var dateArray = statArray.map(dateStatArray);
+    var printArray2 = statArray.map(printStatArray2);
+    var dateArray = statArray.map(printStatArray);
+    console.log(printArray);
+    console.log(printArray2);
+    console.log(dateArray);
 
     setChartData({
       labels: dateArray,
       datasets: [
         {
-          label: "",
+          yAxisID: 'y1',
+          label: statName,
           data: printArray,
           borderColor: "firebrick",
           backgroundColor: "black",
         },
+        {
+          yAxisID: 'y2',
+          label: statName2,
+          data: printArray2,
+          borderColor: "#4682B4",
+          backgroundColor: "black",
+        }
       ],
     });
     setChartOptions({
+      scales: {
+        y1: {
+          type: 'linear',
+          position: 'left',
+        }, 
+        y2: {
+          type: 'linear',
+          position: 'right',
+        }
+      },
       responsive: true,
       plugins: {
         legend: {
@@ -127,11 +148,12 @@ export default function StatHistory() {
   }
   
   function buildStatArray(item){
-    console.log(item[trainer.Stat], item.Date);
+    //console.log(item[trainer.Stat], item.Date);
     var statValue = item[trainer.Stat];
     var statValue2 = item[trainer.Stat2];
     var dateValue = item.Date;
     var statsArrayEntry = [statValue, statValue2, dateValue];
+    console.log(statsArrayEntry);
     return statsArrayEntry;
   }
 
@@ -139,18 +161,22 @@ export default function StatHistory() {
     return item[0];
   }
 
-  function dateStatArray(item){
+  function printStatArray2(item){
     return item[1];
+  }
+
+  function dateStatArray(item){
+    return item[2];
   }
 
 
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    console.log(returnedData);
+    //console.log(returnedData);
     console.log({
-      TrainerID: data.get('TrainerID'),
-      Stat: data.get('Stat1'),
+      TrainerID: trainer.Email,
+      Stat: data.get('Stat'),
       Stat2: data.get('Stat2')
     });
   };
@@ -168,8 +194,8 @@ export default function StatHistory() {
       })
     })
     .then(res => res.json());
-    console.log("CALLED Stat Fetch");
-    console.log(newData);
+    //console.log("CALLED Stat Fetch");
+    //console.log(newData);
     setReturnedData(newData);
     fetchStatHistory(newData.TrainerID);
   }
@@ -204,9 +230,10 @@ export default function StatHistory() {
       })
     })
     .then(res => res.json());
-    console.log("CALLED PROFILE");
-    console.log(newData[0].Caught);
+    //console.log("CALLED PROFILE");
+    //console.log(newData[0]);
     setReturnedStatHistory(newData);
+    console.log(newData);
     displayStatData(newData, trainer.Stat, trainer.Stat2);
   }
 
@@ -260,9 +287,9 @@ export default function StatHistory() {
                 margin="normal"
                 required
                 fullWidth
-                id="stat1"
+                id="stat"
                 label="Stat #1"
-                name="Stat1"
+                name="Stat"
                 autoComplete="stat"
                 onChange={setInput}
               />
