@@ -11,11 +11,13 @@ import GameplayProfile from './component/gameplayProfile.component';
 import TypeProfile from './component/typeProfile.component';
 import AllStats from './component/allTrainerStats.component';
 import StatHistory from './component/statHistory.component';
+import MenuAppBar from './component/menubar.component';
 
 function App() {
 
   return (
     <>
+    <MenuAppBar/>
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<SignInSide />}/>
