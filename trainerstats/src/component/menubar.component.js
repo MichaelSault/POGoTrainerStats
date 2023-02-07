@@ -69,11 +69,11 @@ export default function MenuAppBar() {
                 open={Boolean(anchorEl)}
                 onClose={handleClose}
               >
-                <MenuItem onClick={handleClose}>Login</MenuItem>
-                <MenuItem onClick={handleClose}>SignUp</MenuItem>
-                <MenuItem onClick={handleClose}>Compare</MenuItem>
-                <MenuItem onClick={handleClose}>Stats Entry</MenuItem>
-                <MenuItem onClick={handleClose}>Stats Lookup</MenuItem>
+                <MenuItem href="login" component="a" onClick={handleClose}>Login</MenuItem>
+                <MenuItem href="signup" component="a" onClick={handleClose}>SignUp</MenuItem>
+                <MenuItem href="history" component="a"onClick={handleClose}>Compare</MenuItem>
+                <MenuItem href="GameplayMedals" component="a"onClick={handleClose}>Stats Entry</MenuItem>
+                <MenuItem href="AllStats" component="a"onClick={handleClose}>Stats Lookup</MenuItem>
             </Menu>
           
           <Typography variant="h6" component="div" sx={{ flexGrow: 1}}>
