@@ -52,6 +52,7 @@ const getStatHistory = async(StatQuery) => {
 
 const getTrainerEntry = async(TrainerProfile) => {
     try {
+        console.log(TrainerProfile.TrainerID);
         let pool = await sql.connect(config);
         let trainers = await pool.request().query(`SELECT * from TrainerStats INNER JOIN Entries ON TrainerStats.EntryID = Entries.EntryID WHERE TrainerID = '${TrainerProfile.TrainerID}'`);
         console.log("Value returned by query:")
@@ -66,7 +67,7 @@ const getTrainerEntry = async(TrainerProfile) => {
 const getTypeEntry = async(TrainerProfile) => {
     try {
         let pool = await sql.connect(config);
-        let trainers = await pool.request().query(`SELECT * from TypeMedals INNER JOIN Entries ON TypeMedals.EntryID = Entries.EntryID WHERE TrainerID = '${TrainerProfile.TrainerID}'`);
+        let trainers = await pool.request().query(`SELECT * from TypeMedals INNER JOIN Entries ON TypeMedals.EntryID = Entries.EntryID WHERE Entries.TrainerID = '${TrainerProfile.TrainerID}'`);
         console.log("Value returned by query:")
         console.log(trainers);
         return trainers;

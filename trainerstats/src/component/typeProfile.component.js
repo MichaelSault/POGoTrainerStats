@@ -3,18 +3,40 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
+//import FormControlLabel from '@mui/material/FormControlLabel';
+//import Checkbox from '@mui/material/Checkbox';
 import Link from '@mui/material/Link';
-import Paper from '@mui/material/Paper';
+//import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import CatchingPokemonIcon from '@mui/icons-material/CatchingPokemon';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend,
+} from 'chart.js';
+
+import {Line} from 'react-chartjs-2';
+
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend
+)
 
 function Copyright(props) {
   return (
@@ -33,6 +55,39 @@ const theme = createTheme();
 export default function TypeProfile() {
   const [returnedData, setReturnedData] = useState({EntryID: 0, TrainerID: 0, Date: "2022-02-22", Caught: '', Seen: '', DistanceWalked: '', PokemonCaught: '', PokestopsVisited: '', TrainerLevel: 1, TotalXP: 0});
   const [trainer, setTrainer] = useState({TrainerID: 0})
+
+  const [chartData, setChartData] = useState({
+    datasets: [],
+  });
+
+  const [chartOptions, setChartOptions] = useState({});
+
+  useEffect(() => {
+    setChartData({
+      labels: ["", "","",""],
+      datasets: [
+        {
+          label: "",
+          data: [0, 0, 0, 0],
+          borderColor: "black",
+          backgroundColor: "grey",
+        },
+      ],
+    });
+    setChartOptions({
+      responsive: true,
+      plugins: {
+        legend: {
+          position: "top"
+        },
+        title: {
+          display: true,
+          text: ""
+        }
+      }
+    })
+  }, []);
+
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -131,6 +186,9 @@ export default function TypeProfile() {
               </Grid>
               
             </Box>
+
+            <Line options={chartOptions} data={chartData}/>
+
             <p>Welcome Trainer: {returnedData.TrainerID}</p>
             <p>Entry Number: {returnedData.EntryID} </p>
             <p>Entry Date: {returnedData.Date} </p>

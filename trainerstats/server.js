@@ -58,7 +58,7 @@ app.post('/gpFetch', async(req, res) => {
 app.post('/typeFetch', async(req, res) => { 
     await dbOperation.getTypeEntry(req.body);
     const result = await dbOperation.getTypeEntry(req.body);
-    //console.log('called typeFetch');
+    console.log('called typeFetch');
     res.send(result.recordset[0]);
 });
 

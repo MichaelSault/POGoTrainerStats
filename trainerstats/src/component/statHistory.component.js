@@ -13,7 +13,6 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import {useState, useEffect} from 'react';
 import { Divider } from '@mui/material';
 
-
 import {
   Chart as ChartJS,
   CategoryScale,
