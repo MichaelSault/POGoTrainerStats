@@ -89,6 +89,66 @@ export default function TypeProfile() {
   }, []);
 
 
+  function displayStatData(stat){
+    var statArray = stat.map(buildStatArray);
+    console.log(statArray);
+
+    setChartData({
+      labels: 'datearray',
+      datasets: [
+        {
+          yAxisID: 'y1',
+          label: 'Caught',
+          data: 'printArray',
+          borderColor: "firebrick",
+          backgroundColor: "black",
+        }
+      ],
+    });
+    setChartOptions({
+      scales: {
+        y1: {
+          type: 'linear',
+          position: 'left',
+        }
+      },
+      responsive: true,
+      plugins: {
+        legend: {
+          position: "top"
+        },
+        title: {
+          display: true,
+          text: "Types of Pokémon Caught"
+        }
+      }
+    })
+  
+    //document.getElementById('ParsedStatArray').innerHTML = printArray;
+  }
+
+  function buildStatArray(item){
+    //console.log(item[trainer.Stat], item.Date);
+    var statValue = item.Schoolkid;
+    var statValue2 = item.BlackBelt;
+    var dateValue = item.Date;
+    var statsArrayEntry = [statValue, statValue2, dateValue];
+    console.log(statsArrayEntry);
+    return statValue;
+  }
+
+  // function printStatArray(item){
+  //   console.log(item);
+  //   //var entryArray = [item.Schoolkid, item.BlackBelt, item.BirdKeeper, item.PunkGirl, item.RuinManiac, item.Hiker, item.BugCatcher, item.HexManiac, item.RailStaff, item.Kindler, item.Swimmer, item.Gardener, item.Rocker, item.Psychic, item.Skier, item.DragonTamer, item.Delinquent, item.FairyTaleGirl];
+  //   console.log(item.Schoolkid);
+  //   return item.Schoolkid;
+  // }
+
+  // function dateStatArray(item){
+  //   return item.Date;
+  // }
+
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -114,7 +174,8 @@ export default function TypeProfile() {
     .then(res => res.json());
     console.log("CALLED PROFILE");
     console.log(newData);
-    setReturnedData(newData)
+    setReturnedData(newData);
+    displayStatData(newData);
     
   }
 
