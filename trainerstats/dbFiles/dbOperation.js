@@ -34,15 +34,18 @@ const getStatHistory = async(StatQuery) => {
         console.log("Column To Query:")
         console.log(StatQuery.Stat);
         console.log(StatQuery.Stat2);
+        console.log(StatQuery.TrainerID);
         let pool = await sql.connect(config);
         let statHistory = await pool.request().query(
-            `SELECT ${StatQuery.Stat}, ${StatQuery.Stat2}, TrainerStats.Date from TrainerStats 
-            INNER JOIN GameplayMedals ON TrainerStats.EntryID = GameplayMedals.EntryID 
-            INNER JOIN TypeMedals ON GameplayMedals.EntryID = TypeMedals.EntryID 
-            WHERE TrainerStats.TrainerID = '${StatQuery.TrainerID}' 
-            ORDER BY TrainerStats.Date`
+            `SELECT ${StatQuery.Stat}, ${StatQuery.Stat2}, Entries.Date from TrainerStats 
+            JOIN GameplayMedals ON TrainerStats.EntryID = GameplayMedals.EntryID 
+            JOIN TypeMedals ON GameplayMedals.EntryID = TypeMedals.EntryID 
+            JOIN Entries ON Entries.EntryID = TypeMedals.EntryID 
+            WHERE Entries.TrainerID = '${StatQuery.TrainerID}' 
+            ORDER BY Entries.Date`
         );
         console.log("Query Returned");
+        console.log(statHistory);
         return statHistory;
     }
     catch(error) {
