@@ -18,9 +18,9 @@ const getTrainerProfile = async(TrainerProfile) => {
 const getGameplayEntry = async(TrainerProfile) => {
     try {
         let pool = await sql.connect(config);
-        let trainers = await pool.request().query(`SELECT * from GameplayMedals INNER JOIN Entries ON GameplayMedals.EntryID = Entries.EntryID WHERE TrainerID = '${TrainerProfile.TrainerID}'`);
-        //console.log("Value returned by query:")
-        //console.log(trainers);
+        let trainers = await pool.request().query(`SELECT * from GameplayMedals INNER JOIN Entries ON GameplayMedals.EntryID = Entries.EntryID WHERE TrainerID = '${TrainerProfile.TrainerID}' ORDER BY Date desc`);
+        console.log("Value returned by query:")
+        console.log(trainers);
         return trainers;
     }
     catch(error) {
@@ -57,7 +57,7 @@ const getTrainerEntry = async(TrainerProfile) => {
     try {
         console.log(TrainerProfile.TrainerID);
         let pool = await sql.connect(config);
-        let trainers = await pool.request().query(`SELECT * from TrainerStats INNER JOIN Entries ON TrainerStats.EntryID = Entries.EntryID WHERE TrainerID = '${TrainerProfile.TrainerID}'`);
+        let trainers = await pool.request().query(`SELECT * from TrainerStats INNER JOIN Entries ON TrainerStats.EntryID = Entries.EntryID WHERE TrainerID = '${TrainerProfile.TrainerID}' ORDER BY Date desc`);
         console.log("Value returned by query:")
         console.log(trainers);
         return trainers;
@@ -70,7 +70,7 @@ const getTrainerEntry = async(TrainerProfile) => {
 const getTypeEntry = async(TrainerProfile) => {
     try {
         let pool = await sql.connect(config);
-        let trainers = await pool.request().query(`SELECT * from TypeMedals INNER JOIN Entries ON TypeMedals.EntryID = Entries.EntryID WHERE Entries.TrainerID = '${TrainerProfile.TrainerID}'`);
+        let trainers = await pool.request().query(`SELECT * from TypeMedals INNER JOIN Entries ON TypeMedals.EntryID = Entries.EntryID WHERE Entries.TrainerID = '${TrainerProfile.TrainerID}' ORDER BY Date desc`);
         console.log("Value returned by query:")
         console.log(trainers);
         return trainers;
