@@ -96,7 +96,7 @@ export default function StatHistory() {
     var statArray = stat.map(buildStatArray);
     var printArray = statArray.map(printStatArray);
     var printArray2 = statArray.map(printStatArray2);
-    var dateArray = statArray.map(printStatArray);
+    var dateArray = statArray.map(dateStatArray);
     console.log(printArray);
     console.log(printArray2);
     console.log(dateArray);

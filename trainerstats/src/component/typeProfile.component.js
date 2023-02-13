@@ -94,16 +94,28 @@ export default function TypeProfile() {
     //stat.EntryID = stat.EntryID[0];
     console.log(stat);
     var statArray = stat.map(buildStatArray); //because EntryID has 2 columns, it is coming in as an array.  I need to prevent this somehow, or replace the array with the first value
-    var dateArray = statArray.map(buildStatArray);
-    console.log(dateArray);
+    console.log(statArray);
+    var printArray = statArray.map(printStatArray);
+    var printArray2 = statArray.map(printStatArray2);
+    
+    var dateArray = stat.map(dateStatArray);
+    console.log(printArray);
+    console.log(printArray2);
 
     setChartData({
       labels: dateArray,
       datasets: [
         {
           yAxisID: 'y1',
-          label: 'Caught',
-          data: statArray,
+          label: 'Schoolkid',
+          data: printArray,
+          borderColor: "firebrick",
+          backgroundColor: "black",
+        },
+        {
+          yAxisID: 'y1',
+          label: 'BlackBelt',
+          data: printArray2,
           borderColor: "firebrick",
           backgroundColor: "black",
         }
@@ -138,19 +150,20 @@ export default function TypeProfile() {
     var dateValue = item.Date;
     var statsArrayEntry = [statValue, statValue2, dateValue];
     console.log(statsArrayEntry);
-    return statValue;
+    return statsArrayEntry;
   }
 
-  // function printStatArray(item){
-  //   console.log(item);
-  //   //var entryArray = [item.Schoolkid, item.BlackBelt, item.BirdKeeper, item.PunkGirl, item.RuinManiac, item.Hiker, item.BugCatcher, item.HexManiac, item.RailStaff, item.Kindler, item.Swimmer, item.Gardener, item.Rocker, item.Psychic, item.Skier, item.DragonTamer, item.Delinquent, item.FairyTaleGirl];
-  //   console.log(item.Schoolkid);
-  //   return item.Schoolkid;
-  // }
+  function printStatArray(item){
+    return item[0];
+  }
 
-  // function dateStatArray(item){
-  //   return item.Date;
-  // }
+  function printStatArray2(item){
+    return item[1];
+  }
+
+  function dateStatArray(item){
+    return item.Date;
+  }
 
 
   const handleSubmit = (event) => {
