@@ -74,6 +74,7 @@ export default function MenuAppBar() {
                 <MenuItem href="history" component="a"onClick={handleClose}>Compare</MenuItem>
                 <MenuItem href="GameplayMedals" component="a"onClick={handleClose}>Stats Entry</MenuItem>
                 <MenuItem href="AllStats" component="a"onClick={handleClose}>Stats Lookup</MenuItem>
+                <MenuItem href="TypeProfile" component="a"onClick={handleClose}>Type Medals</MenuItem>
             </Menu>
           
           <Typography variant="h6" component="div" sx={{ flexGrow: 1}}>

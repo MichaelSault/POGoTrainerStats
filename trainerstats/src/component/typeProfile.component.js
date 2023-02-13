@@ -51,6 +51,8 @@ const theme = createTheme();
 
 export default function TypeProfile() {
   const [returnedData, setReturnedData] = useState({EntryID: 0, TrainerID: 0, Date: "2022-02-22", Caught: '', Seen: '', DistanceWalked: '', PokemonCaught: '', PokestopsVisited: '', TrainerLevel: 1, TotalXP: 0});
+  const [returnedStatHistory, setReturnedStatHistory] = useState({EntryID: 0, Date: "2022-02-22" });
+  
   const [trainer, setTrainer] = useState({TrainerID: 0})
 
   const [chartData, setChartData] = useState({
@@ -87,16 +89,21 @@ export default function TypeProfile() {
 
 
   function displayStatData(stat){
-    var statArray = stat.map(buildStatArray);
-    console.log(statArray);
+    console.log("Displaying Stats:")
+    console.log(stat[0].EntryID[0]);
+    //stat.EntryID = stat.EntryID[0];
+    console.log(stat);
+    var statArray = stat.map(buildStatArray); //because EntryID has 2 columns, it is coming in as an array.  I need to prevent this somehow, or replace the array with the first value
+    var dateArray = statArray.map(buildStatArray);
+    console.log(dateArray);
 
     setChartData({
-      labels: 'datearray',
+      labels: dateArray,
       datasets: [
         {
           yAxisID: 'y1',
           label: 'Caught',
-          data: 'printArray',
+          data: statArray,
           borderColor: "firebrick",
           backgroundColor: "black",
         }
@@ -149,7 +156,7 @@ export default function TypeProfile() {
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    console.log("1012");
+    console.log(trainer.TrainerID);
     console.log(returnedData);
     console.log({
       TrainerID: data.get('TrainerID')
@@ -171,7 +178,8 @@ export default function TypeProfile() {
     .then(res => res.json());
     console.log("CALLED PROFILE");
     console.log(newData);
-    setReturnedData(newData);
+    setReturnedStatHistory(newData);
+    console.log(newData);
     displayStatData(newData);
     
   }

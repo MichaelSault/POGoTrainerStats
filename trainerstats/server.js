@@ -59,7 +59,7 @@ app.post('/typeFetch', async(req, res) => {
     await dbOperation.getTypeEntry(req.body);
     const result = await dbOperation.getTypeEntry(req.body);
     console.log('called typeFetch');
-    res.send(result.recordset[0]);
+    res.send(result.recordset);
 });
 
 app.post('/trainerStatFetch', async(req, res) => { 
