@@ -95,12 +95,29 @@ export default function TypeProfile() {
     console.log(stat);
     var statArray = stat.map(buildStatArray); //because EntryID has 2 columns, it is coming in as an array.  I need to prevent this somehow, or replace the array with the first value
     console.log(statArray);
-    var printArray = statArray.map(printStatArray);
-    var printArray2 = statArray.map(printStatArray2);
+
+    //parse all values from statArray
+    var printArray = statArray.map(statArray => statArray[0]);
+    var printArray1 = statArray.map(statArray => statArray[1]);
+    var printArray2 = statArray.map(statArray => statArray[2]);
+    var printArray3 = statArray.map(statArray => statArray[3]);
+    var printArray4 = statArray.map(statArray => statArray[4]);
+    var printArray5 = statArray.map(statArray => statArray[5]);
+    var printArray6 = statArray.map(statArray => statArray[6]);
+    var printArray7 = statArray.map(statArray => statArray[7]);
+    var printArray8 = statArray.map(statArray => statArray[8]);
+    var printArray9 = statArray.map(statArray => statArray[9]);
+    var printArray10 = statArray.map(statArray => statArray[10]);
+    var printArray11 = statArray.map(statArray => statArray[11]);
+    var printArray12 = statArray.map(statArray => statArray[12]);
+    var printArray13 = statArray.map(statArray => statArray[13]);
+    var printArray14 = statArray.map(statArray => statArray[14]);
+    var printArray15 = statArray.map(statArray => statArray[15]);
+    var printArray16 = statArray.map(statArray => statArray[16]);
+    var printArray17 = statArray.map(statArray => statArray[17]);
     
-    var dateArray = stat.map(dateStatArray);
-    console.log(printArray);
-    console.log(printArray2);
+    var dateArray = stat.map(printArray => printArray.Date.slice(0, 10));
+    console.log(statArray);
 
     setChartData({
       labels: dateArray,
@@ -115,7 +132,119 @@ export default function TypeProfile() {
         {
           yAxisID: 'y1',
           label: 'BlackBelt',
+          data: printArray1,
+          borderColor: "firebrick",
+          backgroundColor: "black",
+        },
+        {
+          yAxisID: 'y1',
+          label: 'BirdKeeper',
           data: printArray2,
+          borderColor: "firebrick",
+          backgroundColor: "black",
+        },
+        {
+          yAxisID: 'y1',
+          label: 'PunkGirl',
+          data: printArray3,
+          borderColor: "firebrick",
+          backgroundColor: "black",
+        },
+        {
+          yAxisID: 'y1',
+          label: 'RuinManiac',
+          data: printArray4,
+          borderColor: "firebrick",
+          backgroundColor: "black",
+        },
+        {
+          yAxisID: 'y1',
+          label: 'Hiker',
+          data: printArray5,
+          borderColor: "firebrick",
+          backgroundColor: "black",
+        },
+        {
+          yAxisID: 'y1',
+          label: 'BugCatcher',
+          data: printArray6,
+          borderColor: "firebrick",
+          backgroundColor: "black",
+        },
+        {
+          yAxisID: 'y1',
+          label: 'HexManiac',
+          data: printArray7,
+          borderColor: "firebrick",
+          backgroundColor: "black",
+        },
+        {
+          yAxisID: 'y1',
+          label: 'RailStaff',
+          data: printArray8,
+          borderColor: "firebrick",
+          backgroundColor: "black",
+        },
+        {
+          yAxisID: 'y1',
+          label: 'Kindler',
+          data: printArray9,
+          borderColor: "firebrick",
+          backgroundColor: "black",
+        },
+        {
+          yAxisID: 'y1',
+          label: 'Swimmer',
+          data: printArray10,
+          borderColor: "firebrick",
+          backgroundColor: "black",
+        },
+        {
+          yAxisID: 'y1',
+          label: 'Gardener',
+          data: printArray11,
+          borderColor: "firebrick",
+          backgroundColor: "black",
+        },
+        {
+          yAxisID: 'y1',
+          label: 'Rocker',
+          data: printArray12,
+          borderColor: "firebrick",
+          backgroundColor: "black",
+        },
+        {
+          yAxisID: 'y1',
+          label: 'Psychic',
+          data: printArray13,
+          borderColor: "firebrick",
+          backgroundColor: "black",
+        },
+        {
+          yAxisID: 'y1',
+          label: 'Skier',
+          data: printArray14,
+          borderColor: "firebrick",
+          backgroundColor: "black",
+        },
+        {
+          yAxisID: 'y1',
+          label: 'DragonTamer',
+          data: printArray15,
+          borderColor: "firebrick",
+          backgroundColor: "black",
+        },
+        {
+          yAxisID: 'y1',
+          label: 'Delinquent',
+          data: printArray16,
+          borderColor: "firebrick",
+          backgroundColor: "black",
+        },
+        {
+          yAxisID: 'y1',
+          label: 'FairyTaleGirl',
+          data: printArray17,
           borderColor: "firebrick",
           backgroundColor: "black",
         }
@@ -145,26 +274,10 @@ export default function TypeProfile() {
 
   function buildStatArray(item){
     //console.log(item[trainer.Stat], item.Date);
-    var statValue = item.Schoolkid;
-    var statValue2 = item.BlackBelt;
-    var dateValue = item.Date;
-    var statsArrayEntry = [statValue, statValue2, dateValue];
+    var statsArrayEntry = [item.Schoolkid, item.BlackBelt, item.BirdKeeper, item.PunkGirl, item.RuinManiac, item.Hiker, item.BugCatcher, item.HexManiac, item.RailStaff, item.Kindler, item.Swimmer, item.Gardener, item.Gardener, item.Rocker, item.Psychic, item.Skier, item.DragonTamer, item.Delinquent, item.FairyTale, item.Date];
     console.log(statsArrayEntry);
     return statsArrayEntry;
   }
-
-  function printStatArray(item){
-    return item[0];
-  }
-
-  function printStatArray2(item){
-    return item[1];
-  }
-
-  function dateStatArray(item){
-    return item.Date;
-  }
-
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -265,9 +378,9 @@ export default function TypeProfile() {
               </Grid>
               
             </Box>
-
+            
             <Line options={chartOptions} data={chartData}/>
-
+            
             <p>Welcome Trainer: {returnedData.TrainerID}</p>
             <p>Entry Number: {returnedData.EntryID} </p>
             <p>Entry Date: {returnedData.Date} </p>
