@@ -40,3 +40,9 @@
     transform: rotate(360deg);
   }
 }
+
+div.typeChart {
+  width: 300%;
+  max-width: 600px;
+  height: 400px;
+}

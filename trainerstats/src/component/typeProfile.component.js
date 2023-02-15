@@ -1,3 +1,4 @@
+import '../App.css';
 import * as React from 'react';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
@@ -24,6 +25,7 @@ import {
 } from 'chart.js';
 
 import {Line} from 'react-chartjs-2';
+import { maxWidth } from '@mui/system';
 
 ChartJS.register(
   CategoryScale,
@@ -65,12 +67,7 @@ export default function TypeProfile() {
     setChartData({
       labels: ["", "","",""],
       datasets: [
-        {
-          label: "",
-          data: [0, 0, 0, 0],
-          borderColor: "black",
-          backgroundColor: "grey",
-        },
+        
       ],
     });
     setChartOptions({
@@ -81,7 +78,7 @@ export default function TypeProfile() {
         },
         title: {
           display: true,
-          text: ""
+          text: "Number of Pokémon Caught By Type"
         }
       }
     })
@@ -97,6 +94,7 @@ export default function TypeProfile() {
     console.log(statArray);
 
     //parse all values from statArray
+    
     var printArray = statArray.map(statArray => statArray[0]);
     var printArray1 = statArray.map(statArray => statArray[1]);
     var printArray2 = statArray.map(statArray => statArray[2]);
@@ -126,127 +124,127 @@ export default function TypeProfile() {
           yAxisID: 'y1',
           label: 'Schoolkid',
           data: printArray,
-          borderColor: "firebrick",
-          backgroundColor: "black",
+          borderColor: "DarkGrey",
+          backgroundColor: "Gainsboro",
         },
         {
           yAxisID: 'y1',
           label: 'BlackBelt',
           data: printArray1,
-          borderColor: "firebrick",
-          backgroundColor: "black",
+          borderColor: "Peru",
+          backgroundColor: "SandyBrown",
         },
         {
           yAxisID: 'y1',
           label: 'BirdKeeper',
           data: printArray2,
-          borderColor: "firebrick",
-          backgroundColor: "black",
+          borderColor: "LightGrey",
+          backgroundColor: "AliceBlue",
         },
         {
           yAxisID: 'y1',
           label: 'PunkGirl',
           data: printArray3,
-          borderColor: "firebrick",
-          backgroundColor: "black",
+          borderColor: "MediumOrchid",
+          backgroundColor: "Plum",
         },
         {
           yAxisID: 'y1',
           label: 'RuinManiac',
           data: printArray4,
-          borderColor: "firebrick",
-          backgroundColor: "black",
+          borderColor: "SaddleBrown",
+          backgroundColor: "Sienna",
         },
         {
           yAxisID: 'y1',
           label: 'Hiker',
           data: printArray5,
-          borderColor: "firebrick",
-          backgroundColor: "black",
+          borderColor: "Peru",
+          backgroundColor: "Tan",
         },
         {
           yAxisID: 'y1',
           label: 'BugCatcher',
           data: printArray6,
-          borderColor: "firebrick",
-          backgroundColor: "black",
+          borderColor: "Olive",
+          backgroundColor: "YellowGreen",
         },
         {
           yAxisID: 'y1',
           label: 'HexManiac',
           data: printArray7,
-          borderColor: "firebrick",
-          backgroundColor: "black",
+          borderColor: "DarkSlateBlue",
+          backgroundColor: "Indigo",
         },
         {
           yAxisID: 'y1',
           label: 'RailStaff',
           data: printArray8,
-          borderColor: "firebrick",
-          backgroundColor: "black",
+          borderColor: "Silver",
+          backgroundColor: "LightGrey",
         },
         {
           yAxisID: 'y1',
           label: 'Kindler',
           data: printArray9,
-          borderColor: "firebrick",
-          backgroundColor: "black",
+          borderColor: "Maroon",
+          backgroundColor: "FireBrick",
         },
         {
           yAxisID: 'y1',
           label: 'Swimmer',
           data: printArray10,
-          borderColor: "firebrick",
-          backgroundColor: "black",
+          borderColor: "DodgerBlue",
+          backgroundColor: "CornflowerBlue",
         },
         {
           yAxisID: 'y1',
           label: 'Gardener',
           data: printArray11,
-          borderColor: "firebrick",
-          backgroundColor: "black",
+          borderColor: "Green",
+          backgroundColor: "SeaGreen",
         },
         {
           yAxisID: 'y1',
           label: 'Rocker',
           data: printArray12,
-          borderColor: "firebrick",
-          backgroundColor: "black",
+          borderColor: "GoldenRod",
+          backgroundColor: "Yellow",
         },
         {
           yAxisID: 'y1',
           label: 'Psychic',
           data: printArray13,
-          borderColor: "firebrick",
-          backgroundColor: "black",
+          borderColor: "LightCoral",
+          backgroundColor: "LightPink",
         },
         {
           yAxisID: 'y1',
           label: 'Skier',
           data: printArray14,
-          borderColor: "firebrick",
-          backgroundColor: "black",
+          borderColor: "LightBlue",
+          backgroundColor: "LightCyan",
         },
         {
           yAxisID: 'y1',
           label: 'DragonTamer',
           data: printArray15,
-          borderColor: "firebrick",
-          backgroundColor: "black",
+          borderColor: "DarkSlateBlue",
+          backgroundColor: "MidnightBlue",
         },
         {
           yAxisID: 'y1',
           label: 'Delinquent',
           data: printArray16,
-          borderColor: "firebrick",
-          backgroundColor: "black",
+          borderColor: "Black",
+          backgroundColor: "#333333",
         },
         {
           yAxisID: 'y1',
           label: 'FairyTaleGirl',
           data: printArray17,
-          borderColor: "firebrick",
-          backgroundColor: "black",
+          borderColor: "HotPink",
+          backgroundColor: "Pink",
         }
       ],
     });
@@ -264,7 +262,7 @@ export default function TypeProfile() {
         },
         title: {
           display: true,
-          text: "Types of Pokémon Caught"
+          text: "Number of Pokémon Caught By Type"
         }
       }
     })
@@ -379,9 +377,11 @@ export default function TypeProfile() {
               
             </Box>
             
-            <Line options={chartOptions} data={chartData}/>
+            <div className='typeChart'>
+              <Line options={chartOptions} data={chartData}/>
+            </div>
             
-            <p>Welcome Trainer: {returnedData.TrainerID}</p>
+            {/* <p><b>Welcome Trainer:</b> {returnedData.TrainerID}</p>
             <p>Entry Number: {returnedData.EntryID} </p>
             <p>Entry Date: {returnedData.Date} </p>
             <p>Normal Pokémon Caught: {returnedData.Schoolkid}</p>
@@ -401,10 +401,13 @@ export default function TypeProfile() {
             <p>Ice Pokémon Caught: {returnedData.Skier}</p>
             <p>Dragon Pokémon Caught: {returnedData.DragonTamer}</p>
             <p>Dark Pokémon Caught: {returnedData.Delinquent}</p>
-            <p>Fairy Pokémon Caught: {returnedData.FairyTaleGirl}</p>
+            <p>Fairy Pokémon Caught: {returnedData.FairyTaleGirl}</p> */}
             <Copyright sx={{ mt: 5 }} />
           </Box>
       </Container>
+      
+      
     </ThemeProvider>
+    
   );
 }
